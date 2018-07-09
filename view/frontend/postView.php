@@ -2,7 +2,6 @@
 
 <?php ob_start(); ?>
 
-<section>
 	<div class="news">
 		<h3>
 			<?= htmlspecialchars($post['title']) ?>
@@ -37,7 +36,7 @@
 		<strong>
 			<?= htmlspecialchars($comment['author']) ?>
 		</strong> le
-		<?= $comment['comment_date_fr'] ?><a href="view/frontend/ModifyCommentView.php?action=editComment&amp;id=<?= $comment['id'] ?>">Modifier</a>
+		<?= $comment['comment_date_fr']  . " "  ?><a href="view/frontend/ModifyCommentView.php?action=editComment&amp;id=<?= $comment['id'] ?>" class="modify_comment">Modifier</a>
 	</p>
 	<p>
 		<?= nl2br(htmlspecialchars($comment['comment'])) ?>
@@ -45,7 +44,6 @@
 	<?php
 	}
 	?>
-</section>
 
 <?php $content = ob_get_clean(); ?>
 

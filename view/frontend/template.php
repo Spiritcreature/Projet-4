@@ -16,7 +16,9 @@
 					</ul>
 				</nav>
 		</header>
+		<section>
         	<?= $content ?>
+		</section>
 		<footer>
 			<div>
 				<p>@Corporate: Jean Forteroche</p>
