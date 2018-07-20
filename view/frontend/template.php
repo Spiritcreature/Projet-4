@@ -12,7 +12,7 @@
 				<nav>
 					<ul>
 						<li><a href="index.php">Accueil</li>
-						<li><a href="chapterView.php">Chapitre</a></li>
+						<li><a href="index.php?action=allPosts">Chapitre</a></li>
 					</ul>
 				</nav>
 		</header>

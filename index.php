@@ -18,6 +18,9 @@ try { // On essaie de faire des choses
                 throw new Exception('Aucun identifiant de billet envoyé');
             }
         }
+		elseif ($_GET['action'] == 'allPosts') {
+                listAllPosts();
+        }
         elseif ($_GET['action'] == 'addComment') {
             if (isset($_GET['id']) && $_GET['id'] > 0) {
                 if (!empty($_POST['author']) && !empty($_POST['comment'])) {

@@ -13,6 +13,14 @@ function listPosts() {
 	require( 'view/frontend/listPostsView.php' );
 }
 
+function listAllPosts() {
+	$allPostManager = new PostManager(); // Création d'un objet
+	$allPosts = $allPostManager->getAllPosts(); // Appel d'une fonction de cet objet
+	
+
+	require( 'view/frontend/chapterView.php' );
+}
+
 function post() {
 	$postManager = new PostManager();
 	$commentManager = new CommentManager();
