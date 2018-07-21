@@ -6,7 +6,7 @@
 <h1>Les dernières publications.</h1>
 
 <?php
-while ($data = $posts->fetch())
+while ($data = $posts->fetch(PDO::FETCH_ASSOC))
 {
 ?>
     <div class="news">
