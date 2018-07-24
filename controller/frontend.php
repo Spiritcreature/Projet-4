@@ -18,7 +18,6 @@ function listAllPosts() {
 	$allPostManager = new PostManager(); // Création d'un objet
 	$allPosts = $allPostManager->getAllPosts(); // Appel d'une fonction de cet objet
 	
-
 	require( 'view/frontend/chapterView.php' );
 }
 

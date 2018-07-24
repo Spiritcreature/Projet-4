@@ -7,6 +7,14 @@ class Posts{
 	private $_content;
 	private $_creation_date;
 	
+	public function __construct($id, $title, $content, $creation_date)
+	{
+		$this->setId($id);
+		$this->setTitle($title);
+		$this->setContent($content);
+		$this->setCreation_date($creation_date);
+	}
+	
 	
 	// Hydratation de l'objet pour assigner des valeurs aux attributs.
 	public function hydrate(array $datas)
@@ -33,8 +41,7 @@ class Posts{
 	// liste des setters
 	public function setId($id)
 	{
-		$id = (int) $id;
-		// On vérifie ensuite si ce nombre est bien strictement positif.
+		// On vérifie si ce nombre est bien strictement positif.
 		if ($id > 0)
 		{
 		  // Si c'est le cas, c'est tout bon, on assigne la valeur à l'attribut correspondant.
@@ -44,7 +51,7 @@ class Posts{
 	
 	public function setTitle($title)
 	{
-		// on vérifie que c'est bien des lettres
+		// on vérifie que c'est bien une chaine de caractères. 
 		if (is_string($title))
 		{
 			$this->_title = $title;
@@ -55,18 +62,12 @@ class Posts{
 	{
 		if (is_string($content))
 		{
-			$this->_content = $title;
+			$this->_content = $content;
 		}
 	}
 	
 	public function setCreation_date($creation_date)
 	{
-		$$creation_date = (int) $creation_date;
-		// On vérifie ensuite si ce nombre est bien strictement positif.
-		if ($id > 0)
-		{
-			// Si c'est le cas, c'est tout bon, on assigne la valeur à l'attribut correspondant.
-			$this->_creation_date = $creation_date;
-		}
+		$this->_creation_date = $creation_date;
 	}
 }
