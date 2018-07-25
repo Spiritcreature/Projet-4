@@ -8,12 +8,15 @@ class Post{
 	private $_creation_date;
 	
 	
-	public function __construct($id,$title,$content,$creation_date)
+	public function __construct($datas)
 	{
+		/*
 		$this->setId($id);
 		$this->setTitle($title);
 		$this->setContent($content);
 		$this->setCreation_date($creation_date);
+		*/
+		$this->hydrate($datas);
 	}
 	
 	

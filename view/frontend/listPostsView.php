@@ -12,23 +12,26 @@
 	<h2>Les dernières publications.</h2>
 
 <?php
+var_dump($posts);
+
 foreach ($posts as $post)
 {
 ?>
     <div class="news">
         <h3>
-            <?= htmlspecialchars($post['id']) ?>
-            <em>le <?= $post['creation_date_fr'] ?></em>
+            <?= htmlspecialchars($post->title()) ?>
+            <em>le <?= $post->creation_date() ?></em>
         </h3>
         
         <p>
-            <?= nl2br(substr(htmlspecialchars($post['content']),0,840) . '...') ?>
-            <a href="index.php?action=post&amp;id=<?= $post['id'] ?>">Lire la suite.</a>
+            <?= nl2br(substr(htmlspecialchars($post->content()),0,840) . '...') ?>
+            <a href="index.php?action=post&amp;id=<?= $post->id() ?>">Lire la suite.</a>
         </p>
     </div>
 
 <?php
 }
+
 ?>
 <?php $content = ob_get_clean(); ?>
 

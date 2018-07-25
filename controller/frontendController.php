@@ -52,4 +52,9 @@ function editComment( $comment ) {
 	} else {
 		require( 'view/frontend/ModifyCommentView.php' );
 	}
+	
+	public function bio()
+	{
+		require( 'view/frontend/bio.php' );
+	}
 }
