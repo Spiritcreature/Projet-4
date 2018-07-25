@@ -2,28 +2,33 @@
 
 <?php ob_start(); ?>
 
-
-<h1>Les dernières publications.</h1>
+	<img src="public/img/jean.jpg" alt="photo d'identité de Jean Forteroche" class="photo_identite">
+	<div class="author">
+		<h1 class="jean"><u>Jean Forteroche</u></h1>
+		<p>Je suis né à Bordeaux en France et y ai vécu mon enfance avec mon frère et ma soeur. C'est à l'âge de 23 ans, que je me suis mis à parcourir la France et à faire différents métiers. Puis à 32 ans j'ai rejoins mon frère à Lille, j'ai commencé à écrire quelques livres basé sur mes voyages.
+		3 ans plus tard une maison d'édition me contacte pour me publier et rapidement mes livres ont remportés de franc succès. Puis on été traduit en 18 langues. J'ai finis par m'installer en Alaska en 2016 et c'est là que j'ai décidé de vous publier mon dernier Roman en ligne, nommé : "Un billet pour l'alaska". </p>
+	</div>
+	
+	<h2>Les dernières publications.</h2>
 
 <?php
-while ($data = new Posts($reqPosts))
+foreach ($posts as $post)
 {
 ?>
     <div class="news">
         <h3>
-            <?= htmlspecialchars($data->id()) ?>
-            <em>le <?= $data->creation_date() ?></em>
+            <?= htmlspecialchars($post['id']) ?>
+            <em>le <?= $post['creation_date_fr'] ?></em>
         </h3>
         
         <p>
-            <?= nl2br(substr(htmlspecialchars($data->content()),0,840) . '...') ?>
-            <a href="index.php?action=post&amp;id=<?= $data->id() ?>">Lire la suite.</a>
+            <?= nl2br(substr(htmlspecialchars($post['content']),0,840) . '...') ?>
+            <a href="index.php?action=post&amp;id=<?= $post['id'] ?>">Lire la suite.</a>
         </p>
     </div>
 
 <?php
 }
-$data->closeCursor();
 ?>
 <?php $content = ob_get_clean(); ?>
 

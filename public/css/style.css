@@ -356,21 +356,47 @@ template {
 body{
 	background-color: #000000;
 	color: #784F02;
+	font-size: 18px;
 }
 
 header{
 	width: 100%;
 	z-index: 5;
 	position: fixed;
-	background-image: url(public/img/banner_alaska.png);
+	background-image: url("../img/banner_alaska.png");
+	background-repeat: no-repeat;
+	background-size: 100%;
 	background-color:#CCCCCC;
+	height: 250px;
+}
+
+.title{
+	color: #FFFFFF;
+}
+
+.menu{
+	color: #FFFFFF;
+}
+
+.menu a{
+	color: #FFFFFF;
 }
 
 section{
 	display: flex;
 	flex-direction: column;
 	align-content: space-between;
-	padding-top: 190px; 
+	padding-top: 250px; 
+}
+
+.author{
+	width: 70%;
+	margin: 0 auto;
+}
+
+.photo_identite{
+	width: 300px;
+	margin: 0 auto;
 }
 
 .news p{

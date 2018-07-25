@@ -2,7 +2,7 @@
 
 
 
-require('controller/frontend.php');
+require('controller/frontendController.php');
 
 try { // On essaie de faire des choses
     if (isset($_GET['action'])) {
