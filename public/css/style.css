@@ -367,7 +367,6 @@ header{
 	background-repeat: no-repeat;
 	background-size: 100%;
 	background-color:#CCCCCC;
-	height: 250px;
 }
 
 .title{
@@ -386,7 +385,7 @@ section{
 	display: flex;
 	flex-direction: column;
 	align-content: space-between;
-	padding-top: 250px; 
+	padding-top: 150px; 
 }
 
 .author{
@@ -397,6 +396,10 @@ section{
 .photo_identite{
 	width: 300px;
 	margin: 0 auto;
+}
+
+.last_chapter{
+	margin: auto;
 }
 
 .news p{

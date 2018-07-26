@@ -21,6 +21,9 @@ try { // On essaie de faire des choses
 		elseif ($_GET['action'] == 'allPosts') {
                 listAllPosts();
         }
+		elseif ($_GET['action'] == 'author') {
+                listAllPosts();
+        }
         elseif ($_GET['action'] == 'addComment') {
             if (isset($_GET['id']) && $_GET['id'] > 0) {
                 if (!empty($_POST['author']) && !empty($_POST['comment'])) {

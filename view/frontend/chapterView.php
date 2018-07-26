@@ -12,7 +12,7 @@ while ($data = $allPosts->fetch(PDO::FETCH_ASSOC))
     <div class="news">
         <h3>
             <?= htmlspecialchars($data['title']) ?>
-            <em>le <?= $data['creation_date_fr'] ?></em>
+            <em>le <?= $data['creation_date'] ?></em>
         </h3>
         
         <p>
