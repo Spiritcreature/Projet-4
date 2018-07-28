@@ -18,11 +18,11 @@
 		<form action="index.php?action=addComment&amp;id=<?= $post->id() ?>" method="post">
 			<div>
 				<label for="author">Auteur</label><br/>
-				<input type="text" id="author" name="author"/>
+				<input type="text" id="author" name="author" required/>
 			</div>
 			<div>
 				<label for="comment">Commentaire</label><br/>
-				<textarea id="comment" name="comment"></textarea>
+				<textarea id="comment" name="comment" required></textarea>
 			</div>
 			<div>
 				<input type="submit"/>
@@ -40,7 +40,7 @@
 		</strong> le<?= $comment->comment_date() ?>		
 	</p>
 	<p>
-		<?= nl2br(htmlspecialchars($comment->comment())) ?>
+		<?= nl2br($comment->comment()) ?>
 	</p>
 <?php
 	}

@@ -57,7 +57,6 @@ class Comment{
 	
 	public function setPost_id($postId)
 	{
-		// on vérifie que c'est bien une chaine de caractères. 
 		if ($postId > 0)
 		{
 			$this->_post_id = $postId;
@@ -66,6 +65,7 @@ class Comment{
 	
 	public function setAuthor($author)
 	{
+		// on vérifie que c'est bien une chaine de caractères. 
 		if (is_string($author))
 		{
 			$this->_author = $author;
