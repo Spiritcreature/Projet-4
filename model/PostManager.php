@@ -8,16 +8,16 @@ class PostManager extends Manager
 
 	public function getPosts()
 	{
-		$post = [];
+		$posts = [];
 		$db = $this->dbConnect();
 		$req = $db->query('SELECT id, title, content, DATE_FORMAT(creation_date, \'%d/%m/%Y à %Hh%imin%ss\') AS creation_date FROM posts ORDER BY creation_date DESC LIMIT 0, 3');
 		
 		while($data = $req->fetch(PDO::FETCH_ASSOC))
 		{
-			$post[] = new Post($data);
+			$posts[] = new Post($data);
 		}
 
-		return $post;
+		return $posts;
 	}
 
 	public function getPost($postId)
@@ -32,9 +32,14 @@ class PostManager extends Manager
 	
 	public function getAllPosts()
 	{
+		$posts = [];
 		$db = $this->dbConnect();
 		$reqPosts = $db->query('SELECT id, title, content, DATE_FORMAT(creation_date, \'%d/%m/%Y à %Hh%imin%ss\') AS creation_date FROM posts ORDER BY creation_date ASC');
+		while($data = $reqPosts->fetch(PDO::FETCH_ASSOC))
+		{
+			$posts[] = new Post($data);
+		}
 		
-		return $reqPosts;
+		return $posts;
 	}
 }
