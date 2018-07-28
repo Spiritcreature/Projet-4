@@ -32,7 +32,6 @@ class PostManager extends Manager
 	
 	public function getAllPosts()
 	{
-		$posts = [];
 		$db = $this->dbConnect();
 		$reqPosts = $db->query('SELECT id, title, content, DATE_FORMAT(creation_date, \'%d/%m/%Y à %Hh%imin%ss\') AS creation_date FROM posts ORDER BY creation_date ASC');
 		while($data = $reqPosts->fetch(PDO::FETCH_ASSOC))

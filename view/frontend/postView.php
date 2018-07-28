@@ -25,7 +25,7 @@
 				<textarea id="comment" name="comment" required></textarea>
 			</div>
 			<div>
-				<input type="submit"/>
+				<button type="submit">Envoyer</button>
 			</div>
 		</form>
 	
