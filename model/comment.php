@@ -39,7 +39,7 @@ class Comment{
 	
 	// liste des getters
 	public function id(){ return $this->_id; }
-	public function post_id(){ return $this->_post_id; }
+	public function postid(){ return $this->_post_id; }
 	public function author(){ return $this->_author; }
 	public function comment(){ return $this->_comment; }
 	public function comment_date(){ return $this->_comment_date; }
@@ -57,6 +57,7 @@ class Comment{
 	
 	public function setPost_id($postId)
 	{
+		// on vérifie que c'est bien une chaine de caractères. 
 		if ($postId > 0)
 		{
 			$this->_post_id = $postId;
@@ -65,7 +66,6 @@ class Comment{
 	
 	public function setAuthor($author)
 	{
-		// on vérifie que c'est bien une chaine de caractères. 
 		if (is_string($author))
 		{
 			$this->_author = $author;

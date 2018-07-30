@@ -8,25 +8,28 @@ class CommentManager extends Manager
 
 	public function getComments($postId)
 	{
-		$comments = [];
+		$comment = [];
 		$db = $this->dbConnect();
-		$req = $db->prepare('SELECT id, author, comment, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%imin%ss\') AS comment_date FROM comments WHERE post_id = ? ORDER BY comment_date DESC');
-		$req->execute(array($postId));
-		while ($data = $req->fetch(PDO::FETCH_ASSOC))
+		$comments = $db->prepare('SELECT id, author, comment, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%imin%ss\') AS comment_date FROM comments WHERE post_id = ? ORDER BY comment_date DESC');
+		$comments->execute(array($postId));
+		while ($data = $comments->fetch(PDO::FETCH_ASSOC))
 		{
-			$comments[]= new Comment($data);
+			$comment[]= new Comment($data);
 		}
 		
-		return $comments;
+		return ($comment);
 		
 	}
 
 	public function postComment($postId, $author, $comment)
 	{
+		$add = [];
 		$db = $this->dbConnect();
-		$req = $db->prepare('INSERT INTO comments(post_id, author, comment, comment_date) VALUES(?, ?, ?, NOW())');
-		$req->execute(array($postId, $author, $comment));
+		$comments = $db->prepare('INSERT INTO comments(post_id, author, comment, comment_date) VALUES(?, ?, ?, NOW())');
+		$comments->execute(array($postId, $author, $comment));
+		$data = $comments->fetch(PDO::FETCH_ASSOC);
+		$add[] = new Comment($data);
 
-		return new Comment($req);
+		return $add;
 	}	
 }
