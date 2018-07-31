@@ -39,18 +39,6 @@ try { // On essaie de faire des choses
                 throw new Exception('Aucun identifiant de billet envoyé');
             }
         }
-		elseif ($_GET['action'] == 'editComment'){
-			if (isset($_GET['id'])&& $_GET['id'] > 0){
-				if (!empty($_POST['comment'])) {
-					editComment($_GET['id'], $_POST['comment']);
-				}
-				else {	
-					throw new Exception('Aucun commentaire modifié !');
-				}
-			}else {
-				throw new Exception('Aucun identifiant de billet envoyé');
-			}
-		}
     }else {
         listPosts();
     }

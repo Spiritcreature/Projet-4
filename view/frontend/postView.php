@@ -40,7 +40,7 @@
 		</strong> le<?= $comment->comment_date() ?>		
 	</p>
 	<p>
-		<?= nl2br(htmlspecialchars($comment->comment())) ?>
+		<?= nl2br($comment->comment()) ?>
 	</p>
 <?php
 	}
