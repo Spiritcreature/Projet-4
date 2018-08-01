@@ -31,15 +31,16 @@ function post() {
 	require( 'view/frontend/postView.php' );
 }
 
-function addComment( $postId, $author, $comment ) {
+function addComment($postId, $author, $comment) {
+	$comment = new Comment(['post_id'=>$postId, 'author'=>$author, 'comment'=>$comment]);
 	$commentManager = new CommentManager();
 
-	$affectedLines = $commentManager->postComment( $postId, $author, $comment );
+	$affectedLines = $commentManager->postComment( $comment );
 
 	if ( $affectedLines === false ) {
 		throw new Exception( 'Impossible d\'ajouter le commentaire !' );
 	} else {
-		header( 'Location: index.php?action=post&id=' . $postId );
+		header( 'Location: index.php?action=post&id=' . $comment->post_id() );
 	}
 }
 

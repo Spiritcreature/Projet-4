@@ -21,10 +21,14 @@ class CommentManager extends Manager
 		
 	}
 
-	public function postComment($postId, $author, $comment)
+	public function postComment($comment)
 	{
+		$postIdCom = htmlspecialchars($comment->post_id());
+		$authorCom = htmlspecialchars($comment->author());
+		$commentCom = htmlspecialchars($comment->comment());
+		
 		$db = $this->dbConnect();
 		$comments = $db->prepare('INSERT INTO comments(post_id, author, comment, comment_date) VALUES(?, ?, ?, NOW())');
-		$comments->execute(array($postId, $author, $comment));
+		$comments->execute(array($postIdCom, $authorCom, $commentCom));
 	}	
 }

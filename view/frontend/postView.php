@@ -37,7 +37,7 @@
 	<p>
 		<strong>
 			<?= htmlspecialchars($comment->author()) ?>
-		</strong> le<?= $comment->comment_date() ?>		
+		</strong> le <?= $comment->comment_date() ?>		
 	</p>
 	<p>
 		<?= nl2br($comment->comment()) ?>
