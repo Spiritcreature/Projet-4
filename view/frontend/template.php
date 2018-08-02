@@ -13,7 +13,7 @@
 			<h1 class="title">Billet simple pour l'Alaska !</h1>
 				<nav class="menu">
 					<ul>
-						<li><a href="index.php">Accueil</li>
+						<li><a href="index.php">Accueil</a></li>
 						<li><a href="index.php?action=allPosts">Chapitre</a></li>
 					</ul>
 				</nav>

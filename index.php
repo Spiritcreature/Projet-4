@@ -4,6 +4,35 @@
 
 require('controller/frontendController.php');
 
+if (isset($_GET['action']))
+{
+	switch ($_GET['action'])
+	{
+		case ($_GET['action'] == 'listPosts'):
+			listPosts();
+			break;
+		case ($_GET['action'] == 'post'):
+			post();
+			break;
+		case ($_GET['action'] == 'allPosts'):
+			listAllPosts();
+			break;
+		case ($_GET['action'] == 'addComment'):
+			addComment($_GET['id'], $_POST['author'], $_POST['comment']);
+			break;
+		default:
+			echo 'Il y a une erreur avec l\'instruction "action =" dans le router';	
+	}
+}
+else
+{
+	listPosts();
+}
+
+
+
+
+/*
 try { // On essaie de faire des choses
     if (isset($_GET['action'])) {
         if ($_GET['action'] == 'listPosts') {
@@ -46,4 +75,4 @@ try { // On essaie de faire des choses
 catch(Exception $e) { // S'il y a eu une erreur, alors...
 	echo 'Erreur : ' . $e->getMessage();
 }
-
+*/
