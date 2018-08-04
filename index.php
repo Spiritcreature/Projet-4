@@ -1,8 +1,8 @@
 <?php
 
-
-
 require('controller/frontendController.php');
+require('controller/backendController.php');
+
 
 if (isset($_GET['action']))
 {
@@ -20,8 +20,13 @@ if (isset($_GET['action']))
 		case ($_GET['action'] == 'addComment'):
 			addComment($_GET['id'], $_POST['author'], $_POST['comment']);
 			break;
-		default:
-			echo 'Il y a une erreur avec l\'instruction "action =" dans le router';	
+		case ($_GET['action'] == 'login'):
+			require ('view/frontend/authView.php');
+			break;
+		case ($_GET['action'] == 'auth'):
+			// faire une fonction qui va chercher les infos dans la base.
+			login($login, $password);
+			break;	
 	}
 }
 else

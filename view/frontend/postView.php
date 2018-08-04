@@ -3,11 +3,7 @@
 <?php ob_start(); ?>
 
 	<div class="news">
-		<h3>
-			<?= htmlspecialchars($post->title()) ?>
-			<em> le <?= $post->creation_date() ?></em>
-		</h3>
-
+		<h3><?= htmlspecialchars($post->title()) ?><em> le <?= $post->creation_date() ?></em></h3>
 		<p>
 			<?= nl2br(htmlspecialchars($post->content())) ?>
 		</p>
@@ -25,7 +21,7 @@
 				<textarea id="comment" name="comment"></textarea>
 			</div>
 			<div>
-				<input type="submit"/>
+				<button type="submit">Valider</button>
 			</div>
 		</form>
 	

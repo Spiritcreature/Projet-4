@@ -1,10 +1,10 @@
 <?php
 
 // Chargement des classes
-require_once( 'model/PostManager.php' );
-require_once( 'model/CommentManager.php' );
-require_once( 'model/Post.php' );
-require_once( 'model/Comment.php' );
+require_once( 'model/frontend/PostManager.php' );
+require_once( 'model/frontend/CommentManager.php' );
+require_once( 'model/frontend/Post.php' );
+require_once( 'model/frontend/Comment.php' );
 
 
 function listPosts() {
