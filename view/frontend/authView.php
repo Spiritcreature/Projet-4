@@ -1,10 +1,10 @@
 <?php $title = "Authentification" ?>
-<?php var_dump($log);?>
+
 <?php ob_start(); ?>
 
 	<div class="auth">
 		<h2>Veuillez vous authentifier.</h2>
-			<form action="index.php?action=auth ?>" method="get">
+			<form action="admin.php" method="post">
 				<div>
 					<label for="login"> Nom d'utilisateur :</label><br/>
 					<input type="text" id="author" name="author" placeholder="Nom d'utilisateur..." required/>

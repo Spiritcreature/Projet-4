@@ -13,14 +13,14 @@ function login($login, $password)
 	$logManager = new LogManager();
 	$log = $logManager->getUser($user);
 	
-	if(isset($_POST['login']) AND isset($_POST['password']) AND $_POST['login'] AND $_POST['password'] == $log)
+	if(isset($_POST['login']) AND isset($_POST['password']) AND $_POST['login'] AND $_POST['password'] == new User ($log))
 	{
 		//header( 'Location: index.php' );
-		echo 'ok';
+		return 'ok';
 	}
 	else
 	{
-		throw new Exception( 'Login ou mot de passe invalide.' );
+		echo 'Login ou mot de passe invalide.';
 	}
 	
 	require( 'view/frontend/authView.php' );
