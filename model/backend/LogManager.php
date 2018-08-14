@@ -5,14 +5,17 @@ require_once('model/backend/User.php');
 
 class LogManager extends Manager
 {
-	private function readUser($user)
-	{
-		$loginAdmin = htmlspecialchars($user->login());
-		$passwordAdmin= htmlspecialchars($user->password());
+	private function getUser($user)
+	{	
+		$login = htmlspecialchars($user->login());
+		$password = htmlspecialchars($user->password());
 		
 		$db = $this->dbConnect();
-		$req = $db->query('SELECT user, password, FROM users');
-		$req->execute(array($loginAdmin, $passwordAdmin));
+		$req = $db->prepare('SELECT login, password FROM users WHERE login = :login' );
+		$req->execute(array('login'=>$login, 'password'=>$password));
+		$reponse = $req->fetch();
+		
+		return new User($reponse);
 	}
 	
 }

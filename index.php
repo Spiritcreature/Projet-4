@@ -25,7 +25,7 @@ if (isset($_GET['action']))
 			break;
 		case ($_GET['action'] == 'auth'):
 			// faire une fonction qui va chercher les infos dans la base.
-			login($login, $password);
+			login($_POST['login'], $_POST['password']);
 			break;	
 	}
 }
