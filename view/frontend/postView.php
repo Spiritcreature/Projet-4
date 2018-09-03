@@ -1,3 +1,7 @@
+<?php
+require_once('controller/backendController.php');
+isValidSession()
+?>
 <?php $title = htmlspecialchars($post->title()); ?>
 
 <?php ob_start(); ?>
@@ -29,15 +33,24 @@
 	foreach ( $comments as $comment ) 
 	{
 ?>
-
 	<p>
 		<strong>
 			<?= htmlspecialchars($comment->author()) ?>
-		</strong> le <?= $comment->comment_date() ?>		
+		</strong> le <?= $comment->comment_date() ?> <form action="" method="post"><button>Signaler</button></form>
 	</p>
 	<p>
 		<?= nl2br($comment->comment()) ?>
 	</p>
+		<?php
+			$_SESSION['pseudo']
+			
+		?>  
+		<form action="" method="post">
+			<button>Supprimer</button>
+		</form>
+		<?php 
+			
+		?>
 <?php
 	}
 ?>

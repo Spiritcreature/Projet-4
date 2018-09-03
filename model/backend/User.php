@@ -10,7 +10,7 @@ class User{
 	
 	public function __construct($datas)
 	{
-		
+		var_dump($datas);
 		$this->hydrate($datas);
 	}
 	
@@ -48,17 +48,18 @@ class User{
 		}
 	}
 	
+	
 	public function setLogin($login)
 	{
 		// on vérifie que c'est bien une chaine de caractères. 
-		if (is_string($user))
+		if (is_string($login))
 		{
-			$this->_user = $login;
+			$this->_login = $login;
 		}
 	}
 	
 	public function setPassword($password)
 	{
-		$this->_content = $password;
+		$this->_password = $password;
 	}
 }

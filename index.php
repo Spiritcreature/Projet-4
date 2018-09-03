@@ -3,37 +3,43 @@
 require('controller/frontendController.php');
 require('controller/backendController.php');
 
-
-if (isset($_GET['action']))
-{
-	switch ($_GET['action'])
+try { 
+	if (isset($_GET['action']) && !empty($_GET['action']))
 	{
-		case ($_GET['action'] == 'listPosts'):
-			listPosts();
-			break;
-		case ($_GET['action'] == 'post'):
-			post();
-			break;
-		case ($_GET['action'] == 'allPosts'):
-			listAllPosts();
-			break;
-		case ($_GET['action'] == 'addComment'):
-			addComment($_GET['id'], $_POST['author'], $_POST['comment']);
-			break;
-		case ($_GET['action'] == 'login'):
-			require ('view/frontend/authView.php');
-			break;
-		case ($_GET['action'] == 'auth'):
-			// faire une fonction qui va chercher les infos dans la base.
-			login($_POST['login'], $_POST['password']);
-			break;	
+		switch ($_GET['action'])
+		{
+			case ($_GET['action'] == 'listPosts'):
+				listPosts();
+				break;
+			case ($_GET['action'] == 'post'):
+				post();
+				break;
+			case ($_GET['action'] == 'allPosts'):
+				listAllPosts();
+				break;
+			case ($_GET['action'] == 'addComment'):
+				addComment($_GET['id'], $_POST['author'], $_POST['comment']);
+				break;
+			case ($_GET['action'] == 'login'):
+				require ('view/frontend/authView.php');
+				break;
+			case ($_GET['action'] == 'logout'):
+				logout();
+				require ('view/frontend/authView.php');
+				break;
+			case ($_GET['action'] == 'auth'):
+				login($_POST['login'], $_POST['password']);
+				break;
+		}
+	}
+	else
+	{
+		listPosts();
 	}
 }
-else
-{
-	listPosts();
+catch(Exception $e) { // S'il y a eu une erreur, alors...
+	echo 'Erreur : ' . $e->getMessage();
 }
-
 
 
 

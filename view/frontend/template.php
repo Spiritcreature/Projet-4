@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fr"><head>
         <meta charset="utf-8" />
@@ -16,12 +17,21 @@
     </head>
         
     <body>
+		<?php
+			session_start();
+		?>
 		<header>
 			<h1 class="title">Billet simple pour l'Alaska !</h1>
 				<nav class="menu">
 					<ul>
 						<li><a href="index.php">Accueil</a></li>
 						<li><a href="index.php?action=allPosts">Chapitre</a></li>
+						<?php
+							if(isset($_SESSION['pseudo']))
+							{ ?>  
+						<li><a href="">Rédaction</a></li>
+						<?php
+							} ?>
 					</ul>
 				</nav>
 		</header>
@@ -33,7 +43,17 @@
 				<p>@Corporate: Jean Forteroche</p>
 			</div>
 			<div class="admin">
-				<a href="index.php?action=login">Administration</a>
+				<?php
+					if(isset($_SESSION['pseudo']))
+					{ ?>  
+					<a href="index.php?action=logout">Déconnexion</a>
+				<?php 
+					} 
+					else
+					{ ?>
+					<a href="index.php?action=login">Administration</a>
+				<?php
+					} ?>
 			</div>
 		</footer>
     </body>
