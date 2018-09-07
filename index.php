@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require('controller/frontendController.php');
 require('controller/backendController.php');
 
@@ -29,6 +29,12 @@ try {
 				break;
 			case ($_GET['action'] == 'auth'):
 				login($_POST['login'], $_POST['password']);
+				break;
+			case ($_GET['action'] == 'write'):
+				require ('view/backend/writePostView.php');
+				break;
+			case ($_GET['action'] == 'newPost'):
+				writePost($_POST['title'], $_POST['content']);
 				break;
 		}
 	}

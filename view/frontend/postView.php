@@ -1,7 +1,3 @@
-<?php
-require_once('controller/backendController.php');
-isValidSession()
-?>
 <?php $title = htmlspecialchars($post->title()); ?>
 
 <?php ob_start(); ?>
@@ -13,7 +9,7 @@ isValidSession()
 		</p>
 	</div>
 
-	<div class="comments">
+	<div class="form_comment">
 		<h2>Commentaires</h2>
 		<form action="index.php?action=addComment&amp;id=<?= $post->id() ?>" method="post">
 			<div>
@@ -28,33 +24,39 @@ isValidSession()
 				<button type="submit">Valider</button>
 			</div>
 		</form>
-	
+	</div>
+<p></p>
 <?php
 	foreach ( $comments as $comment ) 
 	{
 ?>
-	<p>
-		<strong>
-			<?= htmlspecialchars($comment->author()) ?>
-		</strong> le <?= $comment->comment_date() ?> <form action="" method="post"><button>Signaler</button></form>
-	</p>
-	<p>
-		<?= nl2br($comment->comment()) ?>
-	</p>
-		<?php
-			$_SESSION['pseudo']
-			
-		?>  
+	<div class="comments">
+		<p>
+			<strong>
+				<?= htmlspecialchars($comment->author()) ?>
+			</strong> le <?= $comment->comment_date() ?>
+			<form action="" method="post">
+				<button>Signaler</button>
+			</form>
+		</p>
+		<p>
+			<?= nl2br($comment->comment()) ?>
+		</p>
+	<?php
+			if (isset($_SESSION['pseudo']))
+			{
+	?>  
 		<form action="" method="post">
 			<button>Supprimer</button>
-		</form>
-		<?php 
-			
-		?>
-<?php
+	<?php	
+			}
+	?>
+		</form>		
+	</div>
+<?php				
 	}
 ?>
-</div>
+
 <?php $content = ob_get_clean(); ?>
 
 <?php require('template.php'); ?>

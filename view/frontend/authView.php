@@ -1,4 +1,3 @@
-<?php //session_start() ?>
 <?php $title = "Authentification" ?>
 <?php ob_start(); ?>
 

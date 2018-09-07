@@ -385,7 +385,7 @@ section{
 	display: flex;
 	flex-direction: column;
 	align-content: space-between;
-	padding-top: 150px; 
+	padding-top: 160px; 
 }
 
 .author{
@@ -414,8 +414,17 @@ section{
 	border: 1px solid;
 }
 
+.form_comment{
+	margin: auto;
+}
+
 .comments{
 	margin: auto;
+	background-color: #393636;
+	border-radius: 2px;
+	margin-bottom: 5px;
+	width: auto;
+	padding: 5px;
 }
 
 .modify_comment{
