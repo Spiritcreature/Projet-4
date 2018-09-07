@@ -46,9 +46,10 @@
 			if (isset($_SESSION['pseudo']))
 			{
 	?>  
-		<form action="" method="post">
+		<form action="index.php?action=removeComment&amp;id=<?= $comment->id() ?>" method="post">
 			<button>Supprimer</button>
 	<?php	
+		echo($comment->id());
 			}
 	?>
 		</form>		

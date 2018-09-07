@@ -36,6 +36,9 @@ try {
 			case ($_GET['action'] == 'newPost'):
 				writePost($_POST['title'], $_POST['content']);
 				break;
+			case ($_GET['action'] == 'removeComment'):
+				removeComment($_GET['id']);
+				break;
 		}
 	}
 	else

@@ -33,7 +33,7 @@
 						<?php
 							if(isset($_SESSION['pseudo']))
 							{ ?>  
-						<li><a href="index.php?action=write">Rédaction</a></li>
+						<li><a href="index.php?action=write">Ajouter un chapitre</a></li>
 						<?php
 							} ?>
 					</ul>

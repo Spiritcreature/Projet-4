@@ -5,6 +5,7 @@
 require_once('model/backend/User.php');
 require_once('model/backend/LogManager.php');
 require_once('model/frontend/Post.php');
+require_once('model/frontend/PostManager.php' );
 
 
 function login($login, $password)
@@ -53,10 +54,28 @@ function writePost($title, $content)
 	$logManager = new LogManager();
 	$newPost = $logManager->newPost($chapter);
 	
-	if ( $newPost === false ) {
+	if ( $newPost === false ) 
+	{
 		throw new Exception( 'Impossible d\'ajouter ce nouveau chapitre !' );
-	} else {
+	} 
+	else 
+	{
 		header( 'Location: index.php?action=allPosts');
 	}
 }
 
+function removeComment($id)
+{
+	$logManager = new LogManager();
+	$remove = $logManager->delComment($id);
+	
+	if ( $remove === false ) 
+	{
+		throw new Exception( 'Impossible de supprimer ce commentaire !' );
+	}
+	else
+	{
+		header ('Location: index.php');
+	}
+	
+}

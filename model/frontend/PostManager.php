@@ -10,7 +10,7 @@ class PostManager extends Manager
 	{
 		$post = [];
 		$db = $this->dbConnect();
-		$req = $db->query('SELECT id, title, content, DATE_FORMAT(creation_date, \'%d/%m/%Y à %Hh%imin%ss\') AS creation_date FROM posts ORDER BY creation_date DESC LIMIT 0, 3');
+		$req = $db->query('SELECT id, title, content, DATE_FORMAT(creation_date, \'%d/%m/%Y à %Hh%imin%ss\') AS creation_date FROM posts ORDER BY creation_date DESC LIMIT 0, 1');
 		
 		while($data = $req->fetch(PDO::FETCH_ASSOC))
 		{
