@@ -3,7 +3,7 @@
 <?php ob_start(); ?>
 
 	<div class="news">
-		<h3><?= htmlspecialchars($post->title()) ?><em> le <?= $post->creation_date() ?></em></h3>
+		<h3><?= htmlspecialchars($post->title()) ?><em> le <?= $post->creation_datefr() ?></em></h3>
 		<p>
 			<?= nl2br(htmlspecialchars($post->content())) ?>
 		</p>
@@ -34,7 +34,7 @@
 		<p>
 			<strong>
 				<?= htmlspecialchars($comment->author()) ?>
-			</strong> le <?= $comment->comment_date() ?>
+			</strong> le <?= $comment->comment_datefr() ?>
 			<form action="" method="post">
 				<button>Signaler</button>
 			</form>
@@ -49,7 +49,6 @@
 		<form action="index.php?action=removeComment&amp;id=<?= $comment->id() ?>" method="post">
 			<button>Supprimer</button>
 	<?php	
-		echo($comment->id());
 			}
 	?>
 		</form>		

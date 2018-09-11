@@ -5,7 +5,7 @@ class Post{
 	private $_id;
 	private $_title;
 	private $_content;
-	private $_creation_date;
+	private $_creation_datefr;
 	
 	
 	public function __construct($datas)
@@ -40,7 +40,7 @@ class Post{
 	public function id(){ return $this->_id; }
 	public function title(){ return $this->_title; }
 	public function content(){ return $this->_content; }
-	public function creation_date(){ return $this->_creation_date; }
+	public function creation_datefr(){ return $this->_creation_datefr; }
 	
 	// liste des setters
 	public function setId($id)
@@ -70,8 +70,8 @@ class Post{
 		}
 	}
 	
-	public function setCreation_date($creation_date)
+	public function setCreation_datefr($creation_date)
 	{
-		$this->_creation_date = $creation_date;
+		$this->_creation_datefr = $creation_date;
 	}
 }

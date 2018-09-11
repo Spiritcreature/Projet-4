@@ -12,7 +12,7 @@ foreach ($allPosts as $data)
     <div class="news">
         <h3>
             <?= htmlspecialchars($data->title()) ?>
-            <em>le <?= $data->creation_date() ?></em>
+            <em>le <?= $data->creation_datefr() ?></em>
         </h3>
         
         <p>

@@ -6,7 +6,7 @@ class Comment{
 	private $_post_id;
 	private $_author;
 	private $_comment;
-	private $_comment_date;
+	private $_comment_datefr;
 	
 	
 	public function __construct($datas)
@@ -42,7 +42,7 @@ class Comment{
 	public function post_id(){ return $this->_post_id; }
 	public function author(){ return $this->_author; }
 	public function comment(){ return $this->_comment; }
-	public function comment_date(){ return $this->_comment_date; }
+	public function comment_datefr(){ return $this->_comment_datefr; }
 	
 	// liste des setters
 	public function setId($id)
@@ -80,8 +80,8 @@ class Comment{
 		}
 	}
 	
-	public function setComment_date($commentDate)
+	public function setComment_datefr($commentDate)
 	{
-		$this->_comment_date = $commentDate;
+		$this->_comment_datefr = $commentDate;
 	}
 }
