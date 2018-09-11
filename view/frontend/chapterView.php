@@ -17,7 +17,7 @@ foreach ($allPosts as $data)
         
         <p>
             <?= nl2br(substr(htmlspecialchars($data->content()),0,840) . '...') ?>
-            <a href="index.php?action=post&amp;id=<?= $data->id() ?>">Lire la suite.</a>
+            <a href="index.php?action=post&amp;id=<?= $data->id() ?>" class="next-text">Lire la suite.</a>
         </p>
     </div>
 

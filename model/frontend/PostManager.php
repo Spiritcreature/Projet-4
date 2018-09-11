@@ -27,7 +27,7 @@ class PostManager extends Manager
 		$req->execute(array($postId));
 		$post = $req->fetch();
 
-		return  new Post($post);
+		return  $this->asError($post);
 	}
 	
 	public function getAllPosts()
@@ -41,5 +41,19 @@ class PostManager extends Manager
 		}
 
 		return $post;
+	}
+	
+	public function asError($post)
+	{
+		if ($post != false)
+		{
+			return new Post ($post);
+		}
+		else
+		{
+			header('HTTP/1.0 404 Not Found');
+			include('view/frontend/error-404.php');
+			exit();
+		}
 	}
 }

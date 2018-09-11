@@ -39,6 +39,10 @@ try {
 			case ($_GET['action'] == 'removeComment'):
 				removeComment($_GET['id']);
 				break;
+			default:
+				header('HTTP/1.0 404 Not Found');
+				include('view/frontend/error-404.php');
+				exit();
 		}
 	}
 	else

@@ -20,7 +20,7 @@ foreach ($posts as $post)
     <div class="news">
         <h3><?= htmlspecialchars($post->title()) ?><em> le <?= $post->creation_datefr() ?></em></h3>
         	<p><?= nl2br(substr(htmlspecialchars($post->content()),0,840) . '...') ?>
-				<a href="index.php?action=post&amp;id=<?= $post->id() ?>">Lire la suite.</a>
+				<a href="index.php?action=post&amp;id=<?= $post->id() ?>" class="next-text">Lire la suite.</a>
         	</p>
     </div>
 
