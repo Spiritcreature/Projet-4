@@ -6,7 +6,7 @@
 if (isset($_SESSION['pseudo'])){ ?>
 
 	<div class="redaction">
-		<h2 class="chapitre">Rédaction d'un nouveau chapitre.</h2>
+		<h2 class="chapter">Rédaction d'un nouveau chapitre.</h2>
 			<form action="index.php?action=newPost" method="post">
 				<label for="title">Titre du chapitre : </label><br/>
 				<p>

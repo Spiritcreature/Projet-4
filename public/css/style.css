@@ -29,17 +29,18 @@ body {
  * `article` contexts in Chrome, Firefox, and Safari.
  */
 
-h1, h3 {
+h1{
   font-size: 2em;
   margin: 0.67em 0;
   text-align:center;
 }
 
-h3{
+h2{
     background-color:#674A02;
     color:white;
-    font-size:0.9em;
-    margin-bottom:0px;
+    
+    margin:15px;
+	text-align: center;
 }
 
 /* Grouping content
@@ -403,14 +404,15 @@ nav a{
 }
 
 .next-text{
-	color: #C5C5C5;
+	color: #A28200;
 }
 
 section{
 	display: flex;
 	flex-direction: column;
 	align-content: space-between;
-	padding-top: 160px;
+	padding-top: 180px;
+	min-height: 600px;
 }
 
 .author{
@@ -433,9 +435,10 @@ section{
 
 .news{
     width:70%;
-	margin: 0 auto 20px;
+	margin: 10px auto 20px;
 	border-radius: 12px;
 	border: 1px solid;
+	padding: 10px;
 }
 
 .chapitre{
@@ -453,16 +456,64 @@ section{
 }
 
 .comments{
+	color: #000000;
 	margin: auto;
-	background-color: #393636;
-	border-radius: 2px;
+	background-image: url(../img/5k0hpkmq.jpg);
+	background-repeat: no-repeat;
+	background-size: auto;
+	background-position: center;
 	margin-bottom: 5px;
 	width: auto;
 	padding: 5px;
 }
 
+.comments p{
+	padding-left: 80px;
+	padding-right: 80px;
+}
+
 .modify_comment{
 	color: #978F8F;
+}
+
+table{
+	margin: 0 auto;
+	border-collapse:collapse;
+}
+
+table thead tr th{
+	border-bottom: 2px #FFFFFF solid;
+	width: 200px;
+	padding-bottom: 20px;
+}
+
+th:nth-of-type(2){
+	width: 400px;
+}
+
+tbody tr td{
+	text-align: center;
+	padding-top: 15px;
+	padding-bottom: 10px;
+	border-bottom: 1px  #787777 solid;
+}
+
+.delete{
+	border: 1px  solid #980104;
+	background-color: #840002;
+	border-radius: 3px;
+	padding: 2px;
+	color: #FFFFFF;
+	text-shadow: 3px 2px 5px #000000;
+}
+
+.validate{
+	border: 1px  solid #23A204;
+	background-color: #1C9300;
+	border-radius: 3px;
+	padding: 2px;
+	color: #FFFFFF;
+	text-shadow: 3px 2px 5px #000000;
 }
 
 footer{

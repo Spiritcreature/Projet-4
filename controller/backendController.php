@@ -24,7 +24,7 @@ function login($login, $password)
     	}
 		else 
 		{
-			echo 'Mauvais identifiant ou mot de passe !';
+			echo ('Mauvais identifiant ou mot de passe !');
 		}
 	require( 'view/frontend/authView.php' );
 }
@@ -35,16 +35,6 @@ function logout()
 	session_destroy();
 	unset($_SESSION['pseudo']);
 	header('location: index.php');
-}
-
-// Fonction pour faire aparaitre les options suplémentaires une fois logué.
-function isValidSession()
-{
-	
-	if(!isset($_SESSION['pseudo']))
-	{
-		session_start();
-	}
 }
 
 // Rédaction d'un nouveau post.
@@ -64,7 +54,7 @@ function writePost($title, $content)
 	}
 }
 
-function removeComment($id)
+function removeComment($id, $deleteComment)
 {
 	$logManager = new LogManager();
 	$remove = $logManager->delComment($id);
@@ -75,7 +65,35 @@ function removeComment($id)
 	}
 	else
 	{
-		header ('Location: index.php');
+		header ('Location: index.php?action=post&id=' .$_GET['deleteComment']);
+	}
+}
+
+function alertComment($id, $alert, $origin)
+{
+	$logManager = new LogManager();
+	$remove = $logManager->alert($id, $alert);
+	
+	if ( $remove === false ) 
+	{
+		throw new Exception( 'Impossible de signaler ce commentaire !' );
+	}
+	else
+	{
+		header ('Location: index.php?action=post&id=' .$_GET['origin']);
 	}
 	
 }
+
+function listAlert()
+{
+	$logManager = new LogManager();
+	$alerts = $logManager->commentsAlert();
+		
+	require('view/backend/alertView.php');
+	
+}
+
+
+	
+

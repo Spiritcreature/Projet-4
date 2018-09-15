@@ -36,4 +36,25 @@ class LogManager extends Manager
 		
 	}
 	
+	public function alert($id, $alert)
+	{
+		$db = $this->dbConnect();
+		$req = $db->prepare('UPDATE comments set alert= :alert WHERE id = :id');
+		$req->execute(array('id'=>$id, 'alert'=>$alert));
+		
+	}
+	
+	public function commentsAlert()
+	{
+		$alerts = [];
+		$db = $this->dbConnect();
+		$listAlert = $db->query('SELECT id, post_id, author, comment, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%imin%ss\') AS comment_datefr, alert FROM comments WHERE alert = 1');
+		while($data = $listAlert->fetch(PDO::FETCH_ASSOC))
+		{
+			$alerts[] = new Comment($data);
+		}
+
+		return $alerts;
+	}
+	
 }

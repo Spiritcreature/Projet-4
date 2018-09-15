@@ -10,10 +10,10 @@ foreach ($allPosts as $data)
 {
 ?>
     <div class="news">
-        <h3>
+        <h2>
             <?= htmlspecialchars($data->title()) ?>
             <em>le <?= $data->creation_datefr() ?></em>
-        </h3>
+        </h2>
         
         <p>
             <?= nl2br(substr(htmlspecialchars($data->content()),0,840) . '...') ?>

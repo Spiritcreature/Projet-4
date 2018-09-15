@@ -19,8 +19,6 @@
 				skin: 'lightgray',
 				max_height: 500,
   				max_width: 500,
-				min_height: 300,
-  				min_width: 300,
 				forced_root_block : false,
 				force_br_newlines : true,
 				force_p_newlines : false,
@@ -34,7 +32,7 @@
     <body>
 		<header>
 			<div>
-				<img src="public/img/alaska.png" class="logo">
+				<img src="public/img/alaska.png" class="logo" alt="logo d'une chaine de montagne">
 			</div>
 			<div>
 				<nav class="menu">
@@ -44,7 +42,9 @@
 						<?php
 							if(isset($_SESSION['pseudo']))
 							{ ?>  
-						<li><a href="index.php?action=write">Ajouter un chapitre</a></li>
+							<li><a href="index.php?action=write">Ajouter un chapitre</a></li>
+							<li><a href="index.php?action=adminAlert">Gerer les alertes</a></li>
+							<li><a href="">Gerer les chapitres</a></li>
 						<?php
 							} ?>
 					</ul>

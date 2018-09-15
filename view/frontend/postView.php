@@ -1,9 +1,11 @@
-<?php $title = htmlspecialchars($post->title()); ?>
+<?php 
 
-<?php ob_start(); ?>
+	$title = htmlspecialchars($post->title());
+	ob_start();
+?>
 
 	<div class="news">
-		<h3><?= htmlspecialchars($post->title()) ?><em> le <?= $post->creation_datefr() ?></em></h3>
+		<h2><?= htmlspecialchars($post->title()) ?><em> le <?= $post->creation_datefr() ?></em></h2>
 		<p>
 			<?= nl2br(htmlspecialchars($post->content())) ?>
 		</p>
@@ -25,20 +27,31 @@
 			</div>
 		</form>
 	</div>
-<p></p>
+<p><span></span></p>
+
 <?php
 	foreach ( $comments as $comment ) 
 	{
 ?>
+
 	<div class="comments">
 		<p>
 			<strong>
 				<?= htmlspecialchars($comment->author()) ?>
 			</strong> le <?= $comment->comment_datefr() ?>
-			<form action="" method="post">
-				<button>Signaler</button>
-			</form>
 		</p>
+		<?php
+	
+			if( $comment->alert() == true)
+			{
+				echo('Commentaire signalé');
+			}else{ ?>
+				<form action="index.php?action=alert&amp;id=<?= $comment->id() ?>&amp;alert=1&amp;origin=<?= $post->id() ?>" method="post">
+				<button type="submit">Signaler</button>
+			</form>
+			<?php } ?>
+		
+			
 		<p>
 			<?= nl2br($comment->comment()) ?>
 		</p>
@@ -46,8 +59,9 @@
 			if (isset($_SESSION['pseudo']))
 			{
 	?>  
-		<form action="index.php?action=removeComment&amp;id=<?= $comment->id() ?>" method="post">
-			<button>Supprimer</button>
+		<form action="index.php?action=removeComment&amp;id=<?= $comment->id() ?>&amp;deleteComment=<?= $post->id() ?>" method="post">
+
+			<button type="submit">Supprimer</button>
 	<?php	
 			}
 	?>

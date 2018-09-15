@@ -7,6 +7,7 @@ class Comment{
 	private $_author;
 	private $_comment;
 	private $_comment_datefr;
+	private $_alert;
 	
 	
 	public function __construct($datas)
@@ -43,6 +44,7 @@ class Comment{
 	public function author(){ return $this->_author; }
 	public function comment(){ return $this->_comment; }
 	public function comment_datefr(){ return $this->_comment_datefr; }
+	public function alert(){ return $this->_alert; }
 	
 	// liste des setters
 	public function setId($id)
@@ -83,5 +85,10 @@ class Comment{
 	public function setComment_datefr($commentDate)
 	{
 		$this->_comment_datefr = $commentDate;
+	}
+	
+	public function setAlert($alert)
+	{
+		$this->_alert = $alert;
 	}
 }
