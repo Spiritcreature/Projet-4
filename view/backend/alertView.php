@@ -17,7 +17,7 @@ $title = "Commentaire signalé(s)";
 			foreach($alerts as $alert){ ?>
 			<tr>
 				<td>
-					<a href="index.php?action=suppressionalert&amp;id=<?= $alert->id() ?>&amp;alert=0" class="delete">Supprimer</a>
+					<a href="index.php?action=removeComment&amp;id=<?= $alert->id() ?>" class="delete">Supprimer</a>
 				</td>
 				<td>
 					<?= $alert->comment() ?>

@@ -5,21 +5,21 @@
 ?>
 
 	<div class="news">
-		<h2><?= htmlspecialchars($post->title()) ?><em> le <?= $post->creation_datefr() ?></em></h2>
+		<h3><u><?= htmlspecialchars($post->title()) ?><em> le <?= $post->creation_datefr() ?></em></u></h3>
 		<p>
 			<?= nl2br(htmlspecialchars($post->content())) ?>
 		</p>
 	</div>
-
+		<span class="feature"></span>
 	<div class="form_comment">
 		<h2>Commentaires</h2>
 		<form action="index.php?action=addComment&amp;id=<?= $post->id() ?>" method="post">
 			<div>
-				<label for="author">Auteur</label><br/>
+				<p><label for="author">Auteur :</label></p>
 				<input type="text" id="author" name="author"/>
 			</div>
 			<div>
-				<label for="comment">Commentaire</label><br/>
+				<p><label for="comment">Commentaire :</label></p>
 				<textarea id="comment" name="comment"></textarea>
 			</div>
 			<div>
@@ -36,9 +36,7 @@
 
 	<div class="comments">
 		<p>
-			<strong>
-				<?= htmlspecialchars($comment->author()) ?>
-			</strong> le <?= $comment->comment_datefr() ?>
+			<u><strong><?= htmlspecialchars($comment->author()) ?></strong> le <?= $comment->comment_datefr() ?></u>
 		</p>
 		<?php
 	

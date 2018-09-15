@@ -1,20 +1,12 @@
-<?php $title = 'Un billet pour l\'Alaska !'; ?>
+<?php $title = 'Un billet pour l\'Alaska !';
 
-<?php ob_start(); ?>
+ob_start();
 
-
-<h1>Les dernières publications.</h1>
-
-<?php
 foreach ($allPosts as $data)
 {
 ?>
     <div class="news">
-        <h2>
-            <?= htmlspecialchars($data->title()) ?>
-            <em>le <?= $data->creation_datefr() ?></em>
-        </h2>
-        
+        <h3><u><?= htmlspecialchars($data->title()) ?><em>le <?= $data->creation_datefr() ?></em></u></h3>
         <p>
             <?= nl2br(substr(htmlspecialchars($data->content()),0,840) . '...') ?>
             <a href="index.php?action=post&amp;id=<?= $data->id() ?>" class="next-text">Lire la suite.</a>
