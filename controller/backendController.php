@@ -54,7 +54,7 @@ function writePost($title, $content)
 	}
 }
 
-function removeComment($id, $deleteComment)
+function removeComment($id)
 {
 	$logManager = new LogManager();
 	$remove = $logManager->delComment($id);
@@ -65,7 +65,7 @@ function removeComment($id, $deleteComment)
 	}
 	else
 	{
-		header ('Location: index.php?action=post&id=' .$_GET['deleteComment']);
+		header ('Location: index.php?action=adminAlert');
 	}
 }
 
@@ -94,6 +94,20 @@ function listAlert()
 	
 }
 
-
+function validAlert($id, $alert)
+{
+	$logManager = new LogManager();
+	$remove = $logManager->alert($id, $alert);
+	
+	if ( $remove === false ) 
+	{
+		throw new Exception( 'Impossible de signaler ce commentaire !' );
+	}
+	else
+	{
+		header ('Location: index.php?action=adminAlert');
+	}
+	
+}
 	
 

@@ -48,27 +48,14 @@
 				<button type="submit">Signaler</button>
 			</form>
 			<?php } ?>
-		
-			
 		<p>
 			<?= nl2br($comment->comment()) ?>
-		</p>
-	<?php
-			if (isset($_SESSION['pseudo']))
-			{
-	?>  
-		<form action="index.php?action=removeComment&amp;id=<?= $comment->id() ?>&amp;deleteComment=<?= $post->id() ?>" method="post">
-
-			<button type="submit">Supprimer</button>
-	<?php	
-			}
-	?>
-		</form>		
+		</p>	
 	</div>
 <?php				
 	}
 ?>
 
-<?php $content = ob_get_clean(); ?>
+<?php $content = ob_get_clean();
 
-<?php require('template.php'); ?>
+require('template.php'); ?>

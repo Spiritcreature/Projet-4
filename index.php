@@ -45,6 +45,9 @@ try {
 			case ($_GET['action'] == 'adminAlert'):
 				listAlert();
 				break;
+			case ($_GET['action'] == 'validationalert'):
+				validAlert($_GET['id'], $_GET['alert']);
+				break;
 			default:
 				header('HTTP/1.0 404 Not Found');
 				include('view/frontend/error-404.php');
