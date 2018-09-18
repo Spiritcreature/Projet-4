@@ -4,9 +4,9 @@ ob_start(); ?>
 		<div class="author">
 				<img src="public/img/jean.jpg" alt="photo d'identité de Jean Forteroche" class="photo_identite">
 			<div class="biography">
-				<h1 class="jean"><u>Jean Forteroche</u></h1>
+				<h1 class="jean"><u><strong>Jean Forteroche</strong></u></h1>
 				<p>Je suis né à Bordeaux en France et j'y ai vécu mon enfance avec mon frère et ma soeur. C'est à l'âge de 23 ans, que je me suis mis à parcourir la France et à faire différents métiers. Puis à 32 ans j'ai rejoins mon frère à Lille, j'ai commencé à écrire quelques livres basés sur mes voyages.
-				3 ans plus tard, une maison d'édition me contacte pour me publier et rapidement mes livres ont remportés de francs succès. Ils ont ensuite été traduits en 18 langues. J'ai finis par m'installer en Alaska en 2016 et c'est là, que j'ai décidé de vous publier mon dernier Roman en ligne chapitre par chapitre, nommé : "Billet simple pour l'alaska".</p>
+				3 ans plus tard, une maison d'édition me contacte pour me publier et rapidement mes livres ont remportés de francs succès. Ils ont ensuite été traduits en 18 langues. J'ai finis par m'installer en Alaska en 2016 et c'est là, que j'ai décidé de vous publier mon dernier <strong>Roman</strong> en ligne chapitre par chapitre, nommé : <strong>"Billet simple pour l'alaska".</strong></p>
 			</div>
 		</div>
 	<div class="feature"></div>

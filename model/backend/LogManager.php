@@ -53,8 +53,20 @@ class LogManager extends Manager
 		{
 			$alerts[] = new Comment($data);
 		}
-
 		return $alerts;
 	}
 	
+	public function deleteChapter($id)
+	{
+		$db = $this->dbConnect();
+		$req = $db->prepare('DELETE FROM posts WHERE id = :id');
+		$req->execute(array('id'=>$id));
+	}
+	
+	public function update($id, $title, $content)
+	{
+		$db = $this->dbConnect();
+		$req = $db->prepare('UPDATE posts set title= :title, content=:content WHERE id = :id');
+		$req->execute(array('id'=>$id, 'title'=>$title, 'content'=>$content));
+	}
 }

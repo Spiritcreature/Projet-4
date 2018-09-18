@@ -8,22 +8,22 @@ $title = "Commentaire signalé(s)";
 		<thead>
 			<tr>
 				<th>Supprimer</th>
-				<th>Commentaire(s)</th>
-				<th>Validation</th>
+				<th>Titre du chapitre</th>
+				<th>Modifier</th>
 			</tr>
 		</thead>
 		<tbody>
 			<?php 
-			foreach($alerts as $alert){ ?>
+			foreach($chapters as $chapter){ ?>
 			<tr>
 				<td>
-					<a href="index.php?action=removeComment&amp;id=<?= $alert->id() ?>" class="delete">Supprimer</a>
+					<a href="index.php?action=removeChapter&amp;id=<?= $chapter->id() ?>" class="delete">Supprimer</a>
 				</td>
 				<td>
-					<?= $alert->comment() ?>
+					<?= $chapter->title() ?>
 				</td>
 				<td>
-					<a href="index.php?action=validationAlert&amp;id=<?= $alert->id() ?>&amp;alert=0" class="validate">Validation</a>
+					<a href="index.php?action=modifyView&amp;id=<?= $chapter->id() ?>" class="validate">Modifier</a>
 				</td>
 			</tr>
 			<?php } ?>

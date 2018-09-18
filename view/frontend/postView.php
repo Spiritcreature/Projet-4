@@ -52,9 +52,6 @@
 			<?= nl2br($comment->comment()) ?>
 		</p>	
 	</div>
-<?php				
-	}
-?>
 
 <?php $content = ob_get_clean();
 

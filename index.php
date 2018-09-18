@@ -37,7 +37,7 @@ try {
 				writePost($_POST['title'], $_POST['content']);
 				break;
 			case ($_GET['action'] == 'removeComment'):
-				removeComment($_GET['id'], $_GET['deleteComment']);
+				removeComment($_GET['id']);
 				break;
 			case ($_GET['action'] == 'alert'):
 				alertComment($_GET['id'], $_GET['alert'], $_GET['origin']);
@@ -45,8 +45,20 @@ try {
 			case ($_GET['action'] == 'adminAlert'):
 				listAlert();
 				break;
-			case ($_GET['action'] == 'validationalert'):
+			case ($_GET['action'] == 'validationAlert'):
 				validAlert($_GET['id'], $_GET['alert']);
+				break;
+			case ($_GET['action'] == 'adminChapter'):
+				adminListChapter();
+				break;
+			case ($_GET['action'] == 'removeChapter'):
+				removeChapter($_GET['id']);
+				break;
+			case ($_GET['action'] == 'modifyView'):
+				modifyView();
+				break;
+			case ($_GET['action'] == 'modifyPost'):
+				modifyPost($_GET['id'],$_POST['title'], $_POST['content']);
 				break;
 			default:
 				header('HTTP/1.0 404 Not Found');

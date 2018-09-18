@@ -44,7 +44,7 @@
 							<ul>
 								<li><a href="index.php?action=write">Ecrire</a></li>
 								<li><a href="index.php?action=adminAlert">Alertes</a></li>
-								<li><a href="">Gerer les chapitres</a></li>
+								<li><a href="index.php?action=adminChapter">Gerer les chapitres</a></li>
 							</ul>
 						</li>
 						<?php
@@ -57,7 +57,7 @@
 		</section>
 		<footer>
 			<div>
-				<p>@Corporate: Jean Forteroche</p>
+				<p>Copyright © Billet simple pour l'Alaska 2018, Alexis Dizet.</p>
 			</div>
 			<div class="admin">
 				<?php

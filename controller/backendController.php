@@ -107,7 +107,52 @@ function validAlert($id, $alert)
 	{
 		header ('Location: index.php?action=adminAlert');
 	}
-	
 }
 	
+function adminListChapter()
+{
+	$allPostManager = new PostManager();
+	$chapters = $allPostManager->getAllPosts();
+			
+	require('view/backend/adminChapterView.php');
+	
+}
 
+function removeChapter($id)
+{
+	$logManager = new LogManager();
+	$remove = $logManager->deleteChapter($id);
+	
+	if ( $remove === false ) 
+	{
+		throw new Exception( 'Impossible de supprimer ce chapitre !' );
+	}
+	else
+	{
+		header ('Location: index.php?action=adminChapter');
+	}
+}
+	
+function modifyView()
+{
+	$postManager = new PostManager();
+	$post = $postManager->getPost( $_GET[ 'id' ] );
+			
+	require('view/backend/modifyPostView.php');
+}
+
+
+function modifyPost($id, $title, $content)
+{
+	$logManager = new LogManager();
+	$updatePost = $logManager->update($id, $title, $content);
+			
+	if ( $remove === false ) 
+	{
+		throw new Exception( 'Impossible de modifier ce chapitre !' );
+	}
+	else
+	{
+		header ('Location: index.php?action=modifyView&id=' . $_GET['id']);
+	}
+}
