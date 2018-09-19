@@ -147,7 +147,7 @@ function modifyPost($id, $title, $content)
 	$logManager = new LogManager();
 	$updatePost = $logManager->update($id, $title, $content);
 			
-	if ( $remove === false ) 
+	if ( $updatePost === false ) 
 	{
 		throw new Exception( 'Impossible de modifier ce chapitre !' );
 	}

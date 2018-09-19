@@ -1,6 +1,12 @@
-<?php $title = "Modifier un chapitre" ?>
-<?php ob_start(); ?>
+<?php $title = "Modifier un chapitre";
 
+	ob_start();
+
+	if (isset($_POST['submit']))
+	{ 
+		echo ('<h2>Votre modification a bien été prise en compte.</h2>');
+	}
+?>
 	<div class="redaction">
 		<form action="index.php?action=modifyPost&amp;id=<?= $post->id(); ?>" method="post">
 			<label for="title">Titre du chapitre : </label><br/>

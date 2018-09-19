@@ -52,7 +52,8 @@
 			<?= nl2br($comment->comment()) ?>
 		</p>	
 	</div>
+<?php } ?>
 
-<?php $content = ob_get_clean();
+<?php $content = ob_get_clean(); ?>
 
-require('template.php'); ?>
+<?php require('template.php'); ?>
