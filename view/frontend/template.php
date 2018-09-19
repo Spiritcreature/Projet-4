@@ -37,18 +37,24 @@
 					<ul>
 						<li><a href="index.php"><i class="fas fa-home"><span>Accueil</span></i></a></li>
 						<li><a href="index.php?action=allPosts"><i class="fas fa-book"><span>Chapitres</span></i></a></li>
+						<li><a href="mailto:jean.forteroche@yopmail.fr"><i class="fas fa-envelope"><span>Contact</span></i></a></li>
 						<?php
-							if(isset($_SESSION['pseudo']))
-							{ ?> 
-						<li><a href="#"><i class="fas fa-unlock"><span>Admin</span></i></a>
+							if(!isset($_SESSION['pseudo']))
+							{ ?>
+						<li><a href="index.php?action=login"><i class="fas fa-lock"><span>Login</span></i></a>
+						<?php }else
+							{ ?>
+						<li><a href="#"><i class="fas fa-user-alt"><span>Administration</span></i></a>
 							<ul>
 								<li><a href="index.php?action=write">Ecrire</a></li>
-								<li><a href="index.php?action=adminAlert">Alertes</a></li>
+								<li><a href="index.php?action=adminAlert">Gerer les Alertes</a></li>
 								<li><a href="index.php?action=adminChapter">Gerer les chapitres</a></li>
 							</ul>
+							<li><a href="index.php?action=logout"><i class="fas fa-unlock"><span>Logout</span></i></a>
 						</li>
 						<?php
 							} ?>
+						
 					</ul>
 				</nav>
 		</header>
@@ -56,22 +62,7 @@
         	<?= $content ?>
 		</section>
 		<footer>
-			<div>
-				<p>Copyright © Billet simple pour l'Alaska 2018, Alexis Dizet.</p>
-			</div>
-			<div class="admin">
-				<?php
-					if(isset($_SESSION['pseudo']))
-					{ ?>  
-					<a href="index.php?action=logout">Déconnexion</a>
-				<?php 
-					} 
-					else
-					{ ?>
-					<a href="index.php?action=login">Administration</a>
-				<?php
-					} ?>
-			</div>
+				<p>Copyright © Billet simple pour l'Alaska 2018 @ Alexis Dizet.</p>
 		</footer>
     </body>
 </html>

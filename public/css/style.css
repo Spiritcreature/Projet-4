@@ -40,6 +40,7 @@ h2{
     color:white;
 	text-align: center;
 	padding-bottom: 10px;
+	font-size: 2em;
 	
 }
 
@@ -381,7 +382,8 @@ span{
 }
 
 nav{
-	margin: auto;	
+	margin: auto;
+	font-weight: bold;
 }
 
 nav ul{
@@ -396,23 +398,17 @@ nav li{
 	margin: auto;
 	padding: 0;
 	border: 1px solid #979797;
-	background-color:#454545;
-}
-
-nav li:first-child{
-	border-radius: 3px 0 0 3px;
-}
-
-nav li:last-child{
-	border-radius: 0 3px 3px 0;
+	background-image: linear-gradient(#EBEBEB, #292929);
+	width: 150px;
+	height: 40px;
 }
 
 nav li a{
 	display: block;
-	width: 100px;
-	color: #B1831E;
+	width: 140px;
+	color: #FFFFFF;
 	text-decoration: none;
-	text-shadow: 3px 3px 2px #000000;
+	text-shadow: 2px 1px 5px #000000;
 	padding: 5px;
 }
 
@@ -434,6 +430,7 @@ nav ul li:hover ul li{
 
 nav li ul{
 	position: absolute;
+	margin-top: 10px;
 }
 
 .logo{
@@ -446,7 +443,7 @@ nav li ul{
 }
 
 .next-text{
-	color: #B1831E;
+	color: #000000;
 }
 
 section{
@@ -457,6 +454,62 @@ section{
 	min-height: 600px;
 }
 
+.auth{
+	margin: auto;
+}
+
+fieldset {
+ 	padding:0 20px 20px 20px;
+	margin-bottom:10px;
+ 	border:1px solid #FFFFFF;
+	border-radius: 6px;
+	background-color: #8F8E8E;
+ }
+
+legend {
+	color: #FFFFFF;
+ 	font-weight:bold;
+	font-size: 20px;
+	padding: 6px;
+	border:1px solid #FFFFFF;
+	border-radius: 6px;
+	box-shadow: 3px 3px 2px #000000;
+	background-color: #8F8E8E;
+	text-shadow: 2px 3px 5px #000000;
+	
+ }
+
+label {
+ 	margin-top:10px;
+ 	display:block;
+	text-decoration: underline;
+	margin-bottom: 15px;
+ }
+
+label.inline {
+ 	display:inline;
+ 	margin-right:50px;
+ }
+
+input, textarea {
+	background-color:#FFFFFF;
+	padding:3px;
+	border:1px solid #000000;
+	border-radius:5px;
+	max-width:400px;
+	box-shadow: 1px 2px #000000 inset;
+ }
+
+button{
+	border: 1px  solid #000000;
+	background-image: linear-gradient(#EBEBEB, #292929);
+ 	box-shadow:1px 1px 1px #949494;
+	border-radius: 6px;
+	color: #FFFFFF;
+	text-shadow: 2px 3px 5px #000000;
+	height: 30px;
+}
+
 .author{
 	margin: auto;
 	margin-bottom: 20px;
@@ -464,9 +517,10 @@ section{
 }
 
 .photo_identite{
-	width: 300px;
+	width: 200px;
 	float: left;
-	margin-right: 50px;
+	margin-right: 15px;
+	border-radius: 6px;
 }
 
 .biography{
@@ -485,8 +539,7 @@ section{
     width:70%;
 	margin: 10px auto 20px;
 	border-radius: 12px;
-	background-image: url(../img/Deadman-Lake-Alaska-08.jpg);
-	background-repeat: no-repeat;
+	background-color: #8F8E8E;
 	background-size:cover;
 	border: 1px solid;
 	padding: 10px;
@@ -498,8 +551,8 @@ section{
 
 .redaction{
 	margin-top: 50px;
-	margin-left: 50px;
-	margin-right: 50px;
+	margin-left: 150px;
+	margin-right: 150px;
 }
 
 .feature{
@@ -516,18 +569,35 @@ section{
 .comments{
 	color: #000000;
 	margin: auto;
-	background-image: url(../img/5k0hpkmq.jpg);
+	background-image: url(../img/5k0hpkmq.png);
 	background-repeat: no-repeat;
 	background-size: auto;
 	background-position: center;
 	margin-bottom: 5px;
-	width: auto;
+	word-wrap: break-word;
+	max-width: 400px;
+	height: 300px;
 	padding: 5px;
 }
 
 .comments p{
 	padding-left: 80px;
 	padding-right: 80px;
+}
+
+.comment-text{
+	height: 200px;
+}
+
+.alert{
+	margin-left: 50px;
+	
+}
+
+.alert-text{
+	color:#A20407;
+	font-weight:bold;
+	margin-left: 100px;
 }
 
 .modify_comment{
