@@ -9,7 +9,7 @@ ob_start(); ?>
 			</div>
 		</div>
 	<div class="feature"></div>
-	<h2 class="last_chapter">Dernière plublication</h2>
+	<h2 class="last_chapter">Dernière publication</h2>
 
 <?php
 
@@ -18,8 +18,8 @@ foreach ($posts as $post)
 ?>
 
     <div class="news">
-        <h3><u><?= htmlspecialchars($post->title()) ?><em> le <?= $post->creation_datefr() ?></em> :</u></h3>
-        	<p><?= nl2br(substr(htmlspecialchars($post->content()),0,840) . '...') ?>
+        <h3><u><?= $post->title() ?><em> le <?= $post->creation_datefr() ?></em> :</u></h3>
+        	<p><?= nl2br(substr($post->content(),0,840) . '...') ?>
 				<a href="index.php?action=post&amp;id=<?= $post->id() ?>" class="next-text">Lire la suite.</a>
         	</p>
     </div>

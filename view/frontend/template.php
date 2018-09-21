@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="fr"><head>
+<html lang="fr">
+	<head>
         <meta charset="utf-8" />
         <title><?= $title ?></title>
         <meta name="description" content="Blog écrivain, Alaska, Jean Forteroche, roman en ligne, billet simple, billet simple en alaska,..." />
@@ -9,21 +10,18 @@
 		<meta property="og:site_name" content="JeanForteroche.fr"/>
 		<meta property="og:description" content="Blog écrivain, Alaska, Jean Forteroche, roman en ligne..."/>
 		<meta property="og:image" content="public/img/jean.jpg"/>
+		<meta name="viewport" content="width=device-width"/>
 		<link href="public/css/style.css" rel="stylesheet" />
 		<link href="https://fonts.googleapis.com/css?family=EB+Garamond" rel="stylesheet">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-		<meta name="viewport" content="width=device-width"/>
 		<?php if (isset($_SESSION['pseudo'])){ ?>
 		<script src="https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=77wncdxu48hfqzofqt90dtxlajeqxgf4sa9acnppg7i410pa"></script>
 		<script>tinymce.init({ 
 				selector:'textarea',
-				skin: 'lightgray',
-				max_height: 500,
-  				max_width: 500,
+				plugins : 'advlist autolink link image lists charmap print preview',
 				forced_root_block : false,
 				force_br_newlines : true,
 				force_p_newlines : false,
-				entity_encoding : "raw",
 				encoding: "UTF-8",
 							 });
 		</script>
@@ -59,10 +57,14 @@
 				</nav>
 		</header>
 		<section>
+			
         	<?= $content ?>
 		</section>
 		<footer>
 				<p>Copyright © Billet simple pour l'Alaska 2018 @ Alexis Dizet.</p>
 		</footer>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="public/js/animation.js"></script>
+		<script src="public/js/appStart.js"></script>
     </body>
 </html>

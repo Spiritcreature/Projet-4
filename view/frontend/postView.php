@@ -1,13 +1,13 @@
 <?php 
 
-	$title = htmlspecialchars($post->title());
+	$title = $post->title();
 	ob_start();
 ?>
 
 	<div class="news">
-		<h3><u><?= htmlspecialchars($post->title()) ?><em> le <?= $post->creation_datefr() ?></em></u></h3>
+		<h3><u><?= $post->title()  ?></u></h3>
 		<p>
-			<?= nl2br(htmlspecialchars($post->content())) ?>
+			<?= nl2br($post->content()) ?>
 		</p>
 	</div>
 		<span class="feature"></span>
@@ -32,7 +32,7 @@
 
 	<div class="comments">
 		<div class=comment-text>
-			<p><u><strong><?= htmlspecialchars($comment->author()) ?></strong> le <?= $comment->comment_datefr() ?></u></p>
+			<p><u><strong><?= $comment->author()?></strong> le <?= " " . $comment->comment_datefr() ?></u></p>
 			<p><?= nl2br($comment->comment()) ?></p>
 		</div>
 		<?php

@@ -368,13 +368,12 @@ header{
 	background-image: url(../img/1366_768_20100414122939315882.jpg);
 	background-repeat: no-repeat;
 	background-size:cover;
-	display: flex;
-	align-items:center;
 	padding-top:10px; 
 	width: 100%;
 	z-index: 100;
 	position: fixed;
 	height: 160px;
+	display: flex;
 }
 
 span{
@@ -382,8 +381,9 @@ span{
 }
 
 nav{
-	margin: auto;
 	font-weight: bold;
+	margin: auto;
+	margin-left: 0px;
 }
 
 nav ul{
@@ -436,6 +436,22 @@ nav li ul{
 .logo{
 	margin: auto;
 	height: 200px;
+}
+
+@media (max-width: 800px){
+	
+	header{
+		flex-direction: column;
+	}
+	
+	.logo{
+		height: 100px;
+	}
+}
+
+@media (max-width: 800px){
+	
+	
 }
 
 .title{
@@ -536,23 +552,32 @@ button{
 }
 
 .news{
-    width:70%;
-	margin: 10px auto 20px;
+    width: 77%;
+	margin: 10px auto;
 	border-radius: 12px;
-	background-color: #8F8E8E;
+	background-image: linear-gradient(#B7B7B7, #292929);
 	background-size:cover;
 	border: 1px solid;
 	padding: 10px;
 }
 
-.chapitre{
-	text-align: center;
+.redaction{
+	margin: 10px auto;
+	width: 77%;
 }
 
-.redaction{
-	margin-top: 50px;
-	margin-left: 150px;
-	margin-right: 150px;
+#popup{
+	display: none;
+	position: absolute;
+	align-content: center;
+	top: 500px;
+	left: 50%;
+	width: 300px;
+	padding: 20px auto;
+	color: #DF1115;
+	border-radius: 6px;
+	background-image: linear-gradient(#B7B7B7, #292929);
+	border: #FFFFFF 1px solid;
 }
 
 .feature{

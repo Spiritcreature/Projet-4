@@ -19,7 +19,7 @@ class LogManager extends Manager
 	}
 	
 	public function newPost($chapter)
-	{
+	{	
 		$title = $chapter->title();
 		$content = $chapter->content();
 		
