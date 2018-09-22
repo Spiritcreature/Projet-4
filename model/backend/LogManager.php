@@ -8,14 +8,16 @@ require_once('model/frontend/Comment.php');
 class LogManager extends Manager
 {
 	// récupération de l'utilisateur et du mot de passe
-	public function getUser( $user)
+	public function getUser($login)
 	{	
+		$pseudo = htmlspecialchars($login);
+		
 		$db = $this->dbConnect();
 		$req = $db->prepare('SELECT * FROM users WHERE login = :login' );
-		$req->execute(array('login'=>$user));
+		$req->execute(array('login'=>$pseudo));
 		$answer = $req->fetch(PDO::FETCH_ASSOC);
 		
-		return new User($answer);
+		return($answer);
 	}
 	
 	public function newPost($chapter)

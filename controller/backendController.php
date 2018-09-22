@@ -11,21 +11,22 @@ require_once('model/frontend/PostManager.php' );
 function login($login, $password)
 {
 	$logManager = new LogManager();
-	$verif = $logManager->getUser($login);
+	$loginExist = $logManager->getUser($login);
 
-	// comparaison du mot de passe du formulaire et de la bdd
-	$correctPass = password_verify($password, $verif->password());
-
-	if($correctPass)
-		{
-			session_start();
-			$_SESSION['pseudo'] = $verif->login();
+	if ($loginExist != false )
+    {
+        $userExist = new User($loginExist);
+        if (password_verify($password, $userExist->password()) == true)
+        {
+            $_SESSION['pseudo'] = $userExist->login();
 			header( 'Location: index.php' );
-    	}
-		else 
-		{
-			echo ('Mauvais identifiant ou mot de passe !');
-		}
+			addMessage('sucess','Bonjour Jean !');
+        }else{
+            addMessage('danger','Nom d\'utilisateur ou mot de passe incorrect !');
+        }
+    }else{
+        addMessage('danger','Nom d\'utilisateur ou mot de passe incorrect !');
+    }
 	require( 'view/frontend/authView.php' );
 }
 
@@ -46,7 +47,7 @@ function writePost($title, $content)
 	
 	if ( $newPost === false ) 
 	{
-		throw new Exception( 'Impossible d\'ajouter ce nouveau chapitre !' );
+		addMessage('danger','Impossible d\'ajouter ce nouveau chapitre !' );
 	} 
 	else 
 	{
@@ -61,7 +62,7 @@ function removeComment($id)
 	
 	if ( $remove === false ) 
 	{
-		throw new Exception( 'Impossible de supprimer ce commentaire !' );
+		addMessage('danger', 'Impossible de supprimer ce commentaire !' );
 	}
 	else
 	{
@@ -76,7 +77,7 @@ function alertComment($id, $alert, $origin)
 	
 	if ( $remove === false ) 
 	{
-		throw new Exception( 'Impossible de signaler ce commentaire !' );
+		addMessage('danger', 'Impossible de signaler ce commentaire !' );
 	}
 	else
 	{
@@ -101,7 +102,7 @@ function validAlert($id, $alert)
 	
 	if ( $remove === false ) 
 	{
-		throw new Exception( 'Impossible de signaler ce commentaire !' );
+		addMessage('danger', 'Impossible de signaler ce commentaire !' );
 	}
 	else
 	{
@@ -125,7 +126,7 @@ function removeChapter($id)
 	
 	if ( $remove === false ) 
 	{
-		throw new Exception( 'Impossible de supprimer ce chapitre !' );
+		addMessage('danger', 'Impossible de supprimer ce chapitre !' );
 	}
 	else
 	{
@@ -149,10 +150,15 @@ function modifyPost($id, $title, $content)
 			
 	if ( $updatePost === false ) 
 	{
-		throw new Exception( 'Impossible de modifier ce chapitre !' );
+		addMessage('danger', 'Impossible de modifier ce chapitre !' );
 	}
 	else
 	{
 		header ('Location: index.php?action=post&id=' . $_GET['id']);
 	}
+}
+
+function addMessage($key,$value )
+{
+    $_SESSION['flash'][$key] = $value;
 }

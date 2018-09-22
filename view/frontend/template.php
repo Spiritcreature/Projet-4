@@ -52,13 +52,21 @@
 						</li>
 						<?php
 							} ?>
-						
 					</ul>
 				</nav>
 		</header>
 		<section>
-			
         	<?= $content ?>
+			<?php
+            if ( isset($_SESSION['flash']) && !empty($_SESSION['flash']) )
+            {  foreach ($_SESSION['flash'] as $key => $value): ?>             
+                    <div class="alert-<?= $key ?>">
+                        <strong> <?= $value ?> </strong>
+                    </div>
+            <?php endforeach; }
+            unset($_SESSION['flash']);
+            ?>
+
 		</section>
 		<footer>
 				<p>Copyright © Billet simple pour l'Alaska 2018 @ Alexis Dizet.</p>

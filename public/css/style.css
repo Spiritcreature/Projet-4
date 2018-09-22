@@ -471,7 +471,7 @@ section{
 }
 
 .auth{
-	margin: auto;
+	margin: 150px auto 0;
 }
 
 fieldset {
@@ -566,18 +566,40 @@ button{
 	width: 77%;
 }
 
-#popup{
-	display: none;
-	position: absolute;
-	align-content: center;
-	top: 500px;
-	left: 50%;
-	width: 300px;
-	padding: 20px auto;
-	color: #DF1115;
+.alert-danger{
+	background-color: #A31D1D;
+	color: #D3D3D3;
+	width: 270px;
+	height: 50px;
+	text-align: center;
+	padding-top: 5px;
+	margin: auto;
+	border: 1px solid #FFFFFF;
 	border-radius: 6px;
-	background-image: linear-gradient(#B7B7B7, #292929);
-	border: #FFFFFF 1px solid;
+}
+
+.alert-sucess{
+	background-color: #149B00;
+	color: #D3D3D3;
+	width: 270px;
+	height: 50px;
+	text-align: center;
+	padding-top: 5px;
+	margin: auto;
+	border: 1px solid #FFFFFF;
+	border-radius: 6px;
+}
+
+.alert-danger{
+	background-color: #A31D1D;
+	color: #D3D3D3;
+	width: 270px;
+	height: 50px;
+	text-align: center;
+	padding-top: 5px;
+	margin: auto;
+	border: 1px solid #FFFFFF;
+	border-radius: 6px;
 }
 
 .feature{

@@ -2,6 +2,7 @@
 
 	$title = $post->title();
 	ob_start();
+
 ?>
 
 	<div class="news">

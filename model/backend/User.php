@@ -10,7 +10,6 @@ class User{
 	
 	public function __construct($datas)
 	{
-		var_dump($datas);
 		$this->hydrate($datas);
 	}
 	
