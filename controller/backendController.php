@@ -19,8 +19,8 @@ function login($login, $password)
         if (password_verify($password, $userExist->password()) == true)
         {
             $_SESSION['pseudo'] = $userExist->login();
-			header( 'Location: index.php' );
 			addMessage('sucess','Bonjour Jean !');
+			header( 'Location: index.php' );
         }else{
             addMessage('danger','Nom d\'utilisateur ou mot de passe incorrect !');
         }

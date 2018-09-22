@@ -66,7 +66,6 @@
             <?php endforeach; }
             unset($_SESSION['flash']);
             ?>
-
 		</section>
 		<footer>
 				<p>Copyright © Billet simple pour l'Alaska 2018 @ Alexis Dizet.</p>
