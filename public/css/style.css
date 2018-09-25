@@ -378,6 +378,15 @@ header{
 	align-items: center;
 }
 
+@media (max-width: 800px){
+	
+	header{
+		flex-direction: column;
+		background-color: #000000;
+		background-image: none;
+	}
+}
+
 span{
 	padding-left: 4px;
 }
@@ -460,17 +469,6 @@ nav li ul{
 	height: 100px;
 }
 
-@media (max-width: 800px){
-	
-	header{
-		flex-direction: column;
-	}
-	
-	.logo{
-		height: 100px;
-	}
-}
-
 .title{
 	color: #FFFFFF;
 }
@@ -489,13 +487,13 @@ section{
 
 @media (max-width: 800px){
 	section{
-		padding: 120px 5px 0 5px;
+		padding: 180px 5px 0 5px;
 	}
 }
 
 @media (max-width: 420px){
 	section{
-		padding-top: 120px;
+		padding-top: 180px;
 	}
 }
 
