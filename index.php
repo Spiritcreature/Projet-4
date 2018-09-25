@@ -3,8 +3,7 @@ session_start();
 require('controller/frontendController.php');
 require('controller/backendController.php');
 
-try { 
-	if (isset($_GET['action']) && !empty($_GET['action']))
+if (isset($_GET['action']) && !empty($_GET['action']))
 	{
 		switch ($_GET['action'])
 		{
@@ -70,7 +69,5 @@ try {
 	{
 		listPosts();
 	}
-}
-catch(Exception $e) { // S'il y a eu une erreur, alors...
-	echo 'Erreur : ' . $e->getMessage();
-}
+
+

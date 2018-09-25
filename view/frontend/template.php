@@ -30,7 +30,10 @@
         
     <body>
 		<header>
+			<div>
 				<img src="public/img/alaska.png" class="logo" alt="logo d'une chaine de montagne">
+			</div>
+			<div>
 				<nav class="menu">
 					<ul>
 						<li><a href="index.php"><i class="fas fa-home"><span>Accueil</span></i></a></li>
@@ -54,9 +57,9 @@
 							} ?>
 					</ul>
 				</nav>
+			</div>
 		</header>
 		<section>
-        	<?= $content ?>
 			<?php
             if ( isset($_SESSION['flash']) && !empty($_SESSION['flash']) )
             {  foreach ($_SESSION['flash'] as $key => $value): ?>             
@@ -66,12 +69,10 @@
             <?php endforeach; }
             unset($_SESSION['flash']);
             ?>
+        	<?= $content ?>
 		</section>
 		<footer>
 				<p>Copyright © Billet simple pour l'Alaska 2018 @ Alexis Dizet.</p>
 		</footer>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-		<script src="public/js/animation.js"></script>
-		<script src="public/js/appStart.js"></script>
     </body>
 </html>

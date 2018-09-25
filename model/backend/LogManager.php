@@ -35,7 +35,6 @@ class LogManager extends Manager
 		$db = $this->dbConnect();
 		$del = $db->prepare('DELETE FROM comments WHERE id = :id');
 		$del->execute(array('id'=>$id));
-		
 	}
 	
 	public function alert($id, $alert)
@@ -43,7 +42,6 @@ class LogManager extends Manager
 		$db = $this->dbConnect();
 		$req = $db->prepare('UPDATE comments set alert= :alert WHERE id = :id');
 		$req->execute(array('id'=>$id, 'alert'=>$alert));
-		
 	}
 	
 	public function commentsAlert()

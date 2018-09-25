@@ -2,7 +2,6 @@
 
 	ob_start();
 ?>
-	<div id="popup">Votre modification a bien été prise en compte.</div>
 	<div class="redaction">
 		<form action="index.php?action=modifyPost&amp;id=<?= $post->id(); ?>" method="post">
 			<fieldset>

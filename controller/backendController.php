@@ -18,9 +18,10 @@ function login($login, $password)
         $userExist = new User($loginExist);
         if (password_verify($password, $userExist->password()) == true)
         {
-            $_SESSION['pseudo'] = $userExist->login();
-			addMessage('sucess','Bonjour Jean !');
+            $_SESSION['pseudo'] = $userExist->login();			
 			header( 'Location: index.php' );
+			exit();
+			
         }else{
             addMessage('danger','Nom d\'utilisateur ou mot de passe incorrect !');
         }
@@ -36,6 +37,7 @@ function logout()
 	session_destroy();
 	unset($_SESSION['pseudo']);
 	header('location: index.php');
+	exit();
 }
 
 // Rédaction d'un nouveau post.
@@ -52,6 +54,7 @@ function writePost($title, $content)
 	else 
 	{
 		header( 'Location: index.php?action=allPosts');
+		exit();
 	}
 }
 
@@ -67,6 +70,7 @@ function removeComment($id)
 	else
 	{
 		header ('Location: index.php?action=adminAlert');
+		exit();
 	}
 }
 
@@ -82,6 +86,7 @@ function alertComment($id, $alert, $origin)
 	else
 	{
 		header ('Location: index.php?action=post&id=' .$_GET['origin']);
+		exit();
 	}
 	
 }
@@ -107,6 +112,7 @@ function validAlert($id, $alert)
 	else
 	{
 		header ('Location: index.php?action=adminAlert');
+		exit();
 	}
 }
 	
@@ -130,7 +136,9 @@ function removeChapter($id)
 	}
 	else
 	{
+		addMessage('confirm', 'Chapitre supprimé.' );
 		header ('Location: index.php?action=adminChapter');
+		exit();
 	}
 }
 	
@@ -154,7 +162,9 @@ function modifyPost($id, $title, $content)
 	}
 	else
 	{
+		addMessage('confirm', 'Modifications effectuées !' );
 		header ('Location: index.php?action=post&id=' . $_GET['id']);
+		exit();
 	}
 }
 
