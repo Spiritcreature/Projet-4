@@ -462,6 +462,26 @@ nav li ul{
 	nav li{
 		width: 50px;
 	}
+	
+	nav li ul{
+		margin-top: 0px;
+	}
+	
+	nav li ul li{
+		width: 150px;
+		padding: 0;
+	}
+	
+	nav li ul li a{
+		text-align: center;
+		width: 150px;
+		padding-top: 5px;
+	}
+	
+	nav ul li ul{
+		position: absolute;
+		right: 32px;
+	}
 }
 
 .logo{
@@ -655,29 +675,37 @@ button{
 .comments{
 	color: #000000;
 	margin: auto;
-	background-image: url(../img/5k0hpkmq.png);
-	background-repeat: no-repeat;
-	background-size: auto;
-	background-position: center;
+	border:1px solid #FFFFFF;
+	border-radius: 6px;
+	background-color: #8F8E8E;  
 	margin-bottom: 5px;
 	word-wrap: break-word;
-	max-width: 400px;
-	height: 300px;
+	width: 50%;
 	padding: 5px;
 }
 
+@media(max-width:420px){
+	.comments{
+	width: 80%;
+}
+}
+
 .comments p{
-	padding-left: 80px;
-	padding-right: 80px;
+	padding: auto 10px;
 }
 
 .comment-text{
-	height: 200px;
+	color:#FFFFFF;
 }
 
 .alert{
-	margin-left: 50px;
-	
+	margin-left: 90%;
+}
+
+@media(max-width:420px){
+	.alert{
+	margin-left: 70%;
+}
 }
 
 .alert-text{
@@ -702,7 +730,7 @@ table thead tr th{
 }
 
 th:nth-of-type(2){
-	width: 400px;
+	max-width: 400px;
 }
 
 tbody tr td{

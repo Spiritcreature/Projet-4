@@ -32,10 +32,8 @@
 ?>
 
 	<div class="comments">
-		<div class=comment-text>
 			<p><u><strong><?= $comment->author()?></strong> le <?= " " . $comment->comment_datefr() ?></u></p>
-			<p><?= nl2br($comment->comment()) ?></p>
-		</div>
+			<p class="comment-text"><?= nl2br($comment->comment()) ?></p>
 		<?php
 
 				if( $comment->alert() == true)
