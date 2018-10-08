@@ -590,6 +590,7 @@ button{
 
 .biography{
 	max-width: 800px;
+	text-align: justify;
 }
 
 .last_chapter{
@@ -616,6 +617,7 @@ button{
 }
 
 .alert-danger{
+	margin: 12px auto 0;
 	background-color: #B33131;
 	color: #D3D3D3;
 	width: 270px;
@@ -628,8 +630,7 @@ button{
 }
 
 .alert-confirm{
-	top: 12px;
-	margin: auto;
+	margin: 12px auto 0;
 	background-color: #A2E997;
 	color: #000000;
 	width: 200px;
@@ -687,11 +688,7 @@ button{
 @media(max-width:420px){
 	.comments{
 	width: 80%;
-}
-}
-
-.comments p{
-	padding: auto 10px;
+	}
 }
 
 .comment-text{
@@ -738,6 +735,10 @@ tbody tr td{
 	padding-top: 15px;
 	padding-bottom: 10px;
 	border-bottom: 1px  #787777 solid;
+}
+
+.text{
+	text-align: justify;
 }
 
 .delete{

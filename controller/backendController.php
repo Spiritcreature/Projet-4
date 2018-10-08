@@ -69,6 +69,7 @@ function removeComment($id)
 	}
 	else
 	{
+		addMessage('confirm', 'Commentaire supprimé.' );
 		header ('Location: index.php?action=adminAlert');
 		exit();
 	}
@@ -107,10 +108,11 @@ function validAlert($id, $alert)
 	
 	if ( $remove === false ) 
 	{
-		addMessage('danger', 'Impossible de signaler ce commentaire !' );
+		addMessage('danger', 'Impossible de valider ce commentaire !' );
 	}
 	else
 	{
+		addMessage('confirm', 'Commentaire conservé.' );
 		header ('Location: index.php?action=adminAlert');
 		exit();
 	}

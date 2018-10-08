@@ -19,7 +19,7 @@ $title = "Commentaire signalé(s)";
 				<td>
 					<a href="index.php?action=removeComment&amp;id=<?= $alert->id() ?>" class="delete">Supprimer</a>
 				</td>
-				<td>
+				<td class="text">
 					<?= $alert->comment() ?>
 				</td>
 				<td>

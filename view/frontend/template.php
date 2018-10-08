@@ -38,7 +38,7 @@
 					<ul>
 						<li><a href="index.php"><i class="fas fa-home"><span>Accueil</span></i></a></li>
 						<li><a href="index.php?action=allPosts"><i class="fas fa-book"><span>Chapitres</span></i></a></li>
-						<li><a href="mailto:jean.forteroche@yopmail.fr"><i class="fas fa-envelope"><span>Contact</span></i></a></li>
+						<li><a href="mailto:&#106;%65%61%6e.f%6frt&#101;&#114;o%63&#104;e&#64;y%6f&#112;&#109;%61%69&#108;%2ef&#114;"><i class="fas fa-envelope"><span>Contact</span></i></a></li>
 						<?php
 							if(!isset($_SESSION['pseudo']))
 							{ ?>
