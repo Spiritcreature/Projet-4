@@ -3,7 +3,7 @@
 
 // Chargement des classes
 require_once('model/backend/User.php');
-require_once('model/backend/LogManager.php');
+require_once('model/backend/UserManager.php');
 require_once('model/frontend/Post.php');
 require_once('model/frontend/PostManager.php' );
 
@@ -19,7 +19,7 @@ function login($login, $password)
         if (password_verify($password, $userExist->password()) == true)
         {
             $_SESSION['pseudo'] = $userExist->login();			
-			header( 'Location: index.php' );
+			header( 'Location: index.php?action=administration' );
 			exit();
 			
         }else{
@@ -173,4 +173,9 @@ function modifyPost($id, $title, $content)
 function addMessage($key,$value )
 {
     $_SESSION['flash'][$key] = $value;
+}
+
+function adminView()
+{
+	require('view/backend/adminView.php');
 }

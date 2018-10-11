@@ -36,21 +36,20 @@
 			<div>
 				<nav class="menu">
 					<ul>
-						<li><a href="index.php"><i class="fas fa-home"><span>Accueil</span></i></a></li>
-						<li><a href="index.php?action=allPosts"><i class="fas fa-book"><span>Chapitres</span></i></a></li>
-						<li><a href="mailto:&#106;%65%61%6e.f%6frt&#101;&#114;o%63&#104;e&#64;y%6f&#112;&#109;%61%69&#108;%2ef&#114;"><i class="fas fa-envelope"><span>Contact</span></i></a></li>
 						<?php
 							if(!isset($_SESSION['pseudo']))
 							{ ?>
+						<li><a href="index.php"><i class="fas fa-home"><span>Accueil</span></i></a></li>
+						<li><a href="index.php?action=allPosts"><i class="fas fa-book"><span>Chapitres</span></i></a></li>
+						<li><a href="mailto:&#106;%65%61%6e.f%6frt&#101;&#114;o%63&#104;e&#64;y%6f&#112;&#109;%61%69&#108;%2ef&#114;"><i class="fas fa-envelope"><span>Contact</span></i></a></li>
 						<li><a href="index.php?action=login"><i class="fas fa-lock"><span>Login</span></i></a>
 						<?php }else
 							{ ?>
-						<li><a href="#"><i class="fas fa-user-alt"><span>Administration</span></i></a>
-							<ul>
-								<li><a href="index.php?action=write">Ecrire</a></li>
-								<li><a href="index.php?action=adminAlert">Gerer les Alertes</a></li>
+								<li><a href="index.php?action=write">Ecrire un chapitre</a></li>
+								<li><a href="index.php?action=adminAlert">Gerer les Commentaires</a></li>
 								<li><a href="index.php?action=adminChapter">Gerer les chapitres</a></li>
-							</ul>
+								<li><a href="#"><i class="fas fa-user-alt"><span>Gestion utilisateur</span></i></a></li>
+							
 							<li><a href="index.php?action=logout"><i class="fas fa-unlock"><span>Logout</span></i></a>
 						</li>
 						<?php

@@ -1,6 +1,6 @@
 <?php
 
-require_once('model/frontend/Manager.php');
+require_once('model/frontend/Database.php');
 require_once('model/backend/User.php');
 require_once('model/frontend/Post.php');
 require_once('model/frontend/Comment.php');
@@ -68,5 +68,12 @@ class LogManager extends Manager
 		$db = $this->dbConnect();
 		$req = $db->prepare('UPDATE posts set title= :title, content=:content WHERE id = :id');
 		$req->execute(array('id'=>$id, 'title'=>$title, 'content'=>$content));
+	}
+	
+	public function updateLoginOrPass ($Login, $password)
+	{
+		$db = $this->dbConnect();
+		$req = $db->prepare('UPDATE users set login= :login, password=:password WHERE id = 1');
+		$req->execute(array('login'=>$login, 'password'=>$password));
 	}
 }

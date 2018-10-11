@@ -1,6 +1,6 @@
 <?php
 
-require_once('model/frontend/Manager.php');
+require_once('model/frontend/Database.php');
 require_once('model/frontend/Comment.php');
 
 class CommentManager extends Manager

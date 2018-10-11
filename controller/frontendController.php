@@ -5,6 +5,7 @@ require_once( 'model/frontend/PostManager.php' );
 require_once( 'model/frontend/CommentManager.php' );
 require_once( 'model/frontend/Post.php' );
 require_once( 'model/frontend/Comment.php' );
+require_once('model/backend/UserManager.php');
 
 
 function listPosts() {
@@ -39,7 +40,7 @@ function addComment($postId, $author, $comment) {
 	$affectedLines = $commentManager->postComment( $comment );
 
 	if ( $affectedLines === false ) {
-		throw new Exception( 'Impossible d\'ajouter le commentaire !' );
+		addmessage( 'danger', 'Impossible d\'ajouter le commentaire !' );
 	} else {
 		header( 'Location: index.php?action=post&id=' . $comment->post_id() );
 		exit();

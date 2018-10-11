@@ -59,6 +59,9 @@ if (isset($_GET['action']) && !empty($_GET['action']))
 			case ($_GET['action'] == 'modifyPost'):
 				modifyPost($_GET['id'],$_POST['title'], $_POST['content']);
 				break;
+			case ($_GET['action'] == 'administration'):
+				adminView();
+				break;
 			default:
 				header('HTTP/1.0 404 Not Found');
 				include('view/frontend/error-404.php');
