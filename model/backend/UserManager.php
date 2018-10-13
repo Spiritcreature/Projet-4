@@ -5,7 +5,7 @@ require_once('model/backend/User.php');
 require_once('model/frontend/Post.php');
 require_once('model/frontend/Comment.php');
 
-class UserManager extends Manager
+class UserManager extends Database
 {
 	// récupération de l'utilisateur et du mot de passe
 	public function getUser($login)

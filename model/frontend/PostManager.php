@@ -3,7 +3,7 @@
 require_once('model/frontend/Database.php');
 require_once('model/frontend/Post.php');
 
-class PostManager extends Manager
+class PostManager extends Database
 {
 
 	public function getPosts()

@@ -3,7 +3,7 @@
 require_once('model/frontend/Database.php');
 require_once('model/frontend/Comment.php');
 
-class CommentManager extends Manager
+class CommentManager extends Database
 {
 
 	public function getComments($postId)
