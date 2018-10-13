@@ -60,7 +60,13 @@ if (isset($_GET['action']) && !empty($_GET['action']))
 				modifyPost($_GET['id'],$_POST['title'], $_POST['content']);
 				break;
 			case ($_GET['action'] == 'administration'):
-				adminView();
+				require('view/backend/adminView.php');
+				break;
+			case ($_GET['action'] == 'listUser'):
+				require('view/backend/updateUserView.php');
+				break;
+			case ($_GET['action'] == 'updateUser'):
+				updateUser($_GET['id'], $_POST['login'], $_POST['new_password'], $_POST['conf_password']);
 				break;
 			default:
 				header('HTTP/1.0 404 Not Found');

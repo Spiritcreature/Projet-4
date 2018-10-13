@@ -10,15 +10,17 @@ require_once('model/frontend/PostManager.php' );
 
 function login($login, $password)
 {
-	$logManager = new LogManager();
-	$loginExist = $logManager->getUser($login);
+	$userManager = new UserManager();
+	$loginExist = $userManager->getUser($login);
 
 	if ($loginExist != false )
     {
         $userExist = new User($loginExist);
+		
         if (password_verify($password, $userExist->password()) == true)
         {
-            $_SESSION['pseudo'] = $userExist->login();			
+            $_SESSION['pseudo'] = $userExist->login();
+			$_SESSION['id'] = $userExist->id();
 			header( 'Location: index.php?action=administration' );
 			exit();
 			
@@ -44,8 +46,8 @@ function logout()
 function writePost($title, $content)
 {
 	$chapter = new Post(['title'=>$title,'content'=>$content]);
-	$logManager = new LogManager();
-	$newPost = $logManager->newPost($chapter);
+	$userManager = new UserManager();
+	$newPost = $userManager->newPost($chapter);
 	
 	if ( $newPost === false ) 
 	{
@@ -60,8 +62,8 @@ function writePost($title, $content)
 
 function removeComment($id)
 {
-	$logManager = new LogManager();
-	$remove = $logManager->delComment($id);
+	$userManager = new UserManager();
+	$remove = $userManager->delComment($id);
 	
 	if ( $remove === false ) 
 	{
@@ -77,8 +79,8 @@ function removeComment($id)
 
 function alertComment($id, $alert, $origin)
 {
-	$logManager = new LogManager();
-	$remove = $logManager->alert($id, $alert);
+	$userManager = new UserManager();
+	$remove = $userManager->alert($id, $alert);
 	
 	if ( $remove === false ) 
 	{
@@ -94,17 +96,16 @@ function alertComment($id, $alert, $origin)
 
 function listAlert()
 {
-	$logManager = new LogManager();
-	$alerts = $logManager->commentsAlert();
+	$userManager = new UserManager();
+	$alerts = $userManager->commentsAlert();
 		
 	require('view/backend/alertView.php');
-	
 }
 
 function validAlert($id, $alert)
 {
-	$logManager = new LogManager();
-	$remove = $logManager->alert($id, $alert);
+	$userManager = new userManager();
+	$remove = $userManager->alert($id, $alert);
 	
 	if ( $remove === false ) 
 	{
@@ -129,8 +130,8 @@ function adminListChapter()
 
 function removeChapter($id)
 {
-	$logManager = new LogManager();
-	$remove = $logManager->deleteChapter($id);
+	$userManager = new userManager();
+	$remove = $userManager->deleteChapter($id);
 	
 	if ( $remove === false ) 
 	{
@@ -155,8 +156,8 @@ function modifyView()
 
 function modifyPost($id, $title, $content)
 {
-	$logManager = new LogManager();
-	$updatePost = $logManager->update($id, $title, $content);
+	$userManager = new UserManager();
+	$updatePost = $userManager->updatePost($id, $title, $content);
 			
 	if ( $updatePost === false ) 
 	{
@@ -175,7 +176,25 @@ function addMessage($key,$value )
     $_SESSION['flash'][$key] = $value;
 }
 
-function adminView()
+function updateUser($id, $login, $newPass, $confPass)
 {
-	require('view/backend/adminView.php');
+	$pseudo = htmlspecialchars($login);
+	$nPass = htmlspecialchars($newPass);
+	$cPass = htmlspecialchars($confPass);	
+	
+	if($nPass == $cPass)
+	{
+		$pass_hach = password_hash($cPass, PASSWORD_DEFAULT);
+		$userManager = new UserManager();
+		$updatePass = $userManager->modifypass($id, $pseudo, $pass_hach) ;
+		addMessage('confirm', 'Votre mot de passe a été modifié.' );
+	}
+	else
+	{
+		addMessage('danger', 'Les mots de passe ne correspondent pas.' );
+		
+	}
+	
+	require('view/backend/updateUserView.php');
 }
+

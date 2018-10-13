@@ -18,6 +18,7 @@
 		<script src="https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=77wncdxu48hfqzofqt90dtxlajeqxgf4sa9acnppg7i410pa"></script>
 		<script>tinymce.init({ 
 				selector:'textarea',
+				editor_deselector : "mceNoEditor",
 				plugins : 'advlist autolink link image lists charmap print preview',
 				forced_root_block : false,
 				force_br_newlines : true,
@@ -48,10 +49,8 @@
 								<li><a href="index.php?action=write">Ecrire un chapitre</a></li>
 								<li><a href="index.php?action=adminAlert">Gerer les Commentaires</a></li>
 								<li><a href="index.php?action=adminChapter">Gerer les chapitres</a></li>
-								<li><a href="#"><i class="fas fa-user-alt"><span>Gestion utilisateur</span></i></a></li>
-							
-							<li><a href="index.php?action=logout"><i class="fas fa-unlock"><span>Logout</span></i></a>
-						</li>
+								<li><a href="index.php?action=listUser"><i class="fas fa-user-alt"><span>Gestion utilisateur</span></i></a></li>
+								<li><a href="index.php?action=logout"><i class="fas fa-unlock"><span>Logout</span></i></a></li>
 						<?php
 							} ?>
 					</ul>

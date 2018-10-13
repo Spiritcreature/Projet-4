@@ -5,7 +5,7 @@ require_once('model/backend/User.php');
 require_once('model/frontend/Post.php');
 require_once('model/frontend/Comment.php');
 
-class LogManager extends Manager
+class UserManager extends Manager
 {
 	// récupération de l'utilisateur et du mot de passe
 	public function getUser($login)
@@ -17,7 +17,7 @@ class LogManager extends Manager
 		$req->execute(array('login'=>$pseudo));
 		$answer = $req->fetch(PDO::FETCH_ASSOC);
 		
-		return($answer);
+		return $answer;
 	}
 	
 	public function newPost($chapter)
@@ -63,17 +63,17 @@ class LogManager extends Manager
 		$req->execute(array('id'=>$id));
 	}
 	
-	public function update($id, $title, $content)
+	public function updatePost($id, $title, $content)
 	{
 		$db = $this->dbConnect();
 		$req = $db->prepare('UPDATE posts set title= :title, content=:content WHERE id = :id');
 		$req->execute(array('id'=>$id, 'title'=>$title, 'content'=>$content));
 	}
 	
-	public function updateLoginOrPass ($Login, $password)
+	public function modifypass($id, $pseudo, $pass_hach)
 	{
-		$db = $this->dbConnect();
-		$req = $db->prepare('UPDATE users set login= :login, password=:password WHERE id = 1');
-		$req->execute(array('login'=>$login, 'password'=>$password));
+			$db = $this->dbConnect();
+			$req = $db->prepare('UPDATE users set login= :login, password= :password WHERE id = :id');
+			$req->execute(array('id'=>$id, 'login'=>$pseudo, 'password'=>$pass_hach));
 	}
 }

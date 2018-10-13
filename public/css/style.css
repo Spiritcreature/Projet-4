@@ -657,7 +657,7 @@ button{
 	margin: 12px auto 0;
 	background-color: #A2E997;
 	color: #000000;
-	width: 200px;
+	width: auto;
 	height: 25px;
 	text-align: center;
 	border: 1px solid #FFFFFF;

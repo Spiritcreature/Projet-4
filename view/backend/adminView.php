@@ -2,14 +2,15 @@
 
 $title = "Administration";
 
- ob_start(); ?>
+ ob_start();
+?>
 
 
 	
 		<div class="redaction">
 			<fieldset>
-				<h1 class="welcome">Bienvenue Jean !</h1>
-				<p>Vous êtes à présent connecté sur votre interface d'administation. Vous allez pouvoir faire les actions suivante à l'aide de votre nouveau menu ci-dessus :</p>
+				<h1 class="welcome">Bienvenue <?= $_SESSION['pseudo'] ?> !</h1>
+				<p>Vous êtes à présent connecté sur votre interface d'administation. Vous allez pouvoir faire les actions suivantes à l'aide de votre nouveau menu ci-dessus :</p>
 				<p>
 					<ul>
 						<li>Ecrire un nouveau chapitre.</li>
