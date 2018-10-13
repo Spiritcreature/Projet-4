@@ -1,4 +1,4 @@
 AuthName "Page d'administration protégée"
 AuthType Basic
-AuthUserFile "Projet_4\model\backend\.htpasswd"
+AuthUserFile "Projet4\view\backend\.htpasswd"
 Require valid-user
