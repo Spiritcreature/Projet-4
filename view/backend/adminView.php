@@ -4,9 +4,6 @@ $title = "Administration";
 
  ob_start();
 ?>
-
-
-	
 		<div class="redaction">
 			<fieldset>
 				<h1 class="welcome">Bienvenue <?= $_SESSION['pseudo'] ?> !</h1>
@@ -21,7 +18,6 @@ $title = "Administration";
 				</p>
 			</fieldset>
 		</div>
-
 <?php $content = ob_get_clean();
 
 require('view/frontend/template.php'); ?>

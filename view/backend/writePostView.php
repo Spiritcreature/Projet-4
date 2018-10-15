@@ -3,7 +3,6 @@
 	<div class="redaction">
 		<form action="index.php?action=newPost" method="post">
 			<fieldset>
-				<legend>Rédiger votre chapitre :</legend>
 					<label for="title">Titre du chapitre : </label><br/>
 						<textarea id="title" name="title"  placeholder="Chapitre X : ..."></textarea>
 						<label for="content">Histoire du chapitre :</label><br/>

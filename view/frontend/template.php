@@ -32,7 +32,11 @@
     <body>
 		<header>
 			<div>
+				<?php if(!isset($_SESSION['pseudo'])){ ?>
 				<img src="public/img/alaska.png" class="logo" alt="logo d'une chaine de montagne">
+				<?php } else {  ?>
+				<a href="index.php?action=administration"><img src="public/img/alaska.png" class="logo" alt="logo d'une chaine de montagne"></a>
+				<?php } ?>
 			</div>
 			<div>
 				<nav class="menu">
@@ -46,9 +50,9 @@
 						<li><a href="index.php?action=login"><i class="fas fa-lock"><span>Login</span></i></a>
 						<?php }else
 							{ ?>
-								<li><a href="index.php?action=write">Ecrire un chapitre</a></li>
-								<li><a href="index.php?action=adminAlert">Gerer les Commentaires</a></li>
-								<li><a href="index.php?action=adminChapter">Gerer les chapitres</a></li>
+								<li><a href="index.php?action=write"><i class="fas fa-pen"><span>Ecrire un chapitre</span></i></a></li>
+								<li><a href="index.php?action=adminAlert"><i class="fas fa-exclamation-triangle"><span>Gerer les Commentaires</span></i></a></li>
+								<li><a href="index.php?action=adminChapter"><i class="fas fa-book"><span>Gerer les chapitres</span></i></a></li>
 								<li><a href="index.php?action=listUser"><i class="fas fa-user-alt"><span>Gestion utilisateur</span></i></a></li>
 								<li><a href="index.php?action=logout"><i class="fas fa-unlock"><span>Logout</span></i></a></li>
 						<?php
