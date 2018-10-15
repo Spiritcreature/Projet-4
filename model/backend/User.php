@@ -39,6 +39,8 @@ class User{
 	// liste des setters
 	public function setId($id)
 	{
+		//on convertit en nombre entier.
+		$id = (int)$id;
 		// On vérifie si ce nombre est bien strictement positif.
 		if ($id > 0)
 		{
@@ -59,6 +61,9 @@ class User{
 	
 	public function setPassword($password)
 	{
-		$this->_password = $password;
+		if (is_string($password))
+		{
+			$this->_password = $password;
+		}
 	}
 }

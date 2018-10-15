@@ -12,12 +12,6 @@ class Comment{
 	
 	public function __construct($datas)
 	{
-		/*
-		$this->setId($id);
-		$this->setTitle($title);
-		$this->setContent($content);
-		$this->setCreation_date($creation_date);
-		*/
 		$this->hydrate($datas);
 	}
 	
@@ -49,6 +43,8 @@ class Comment{
 	// liste des setters
 	public function setId($id)
 	{
+		//on convertit en nombre entier.
+		$id = (int)$id;
 		// On vérifie si ce nombre est bien strictement positif.
 		if ($id > 0)
 		{
@@ -59,6 +55,8 @@ class Comment{
 	
 	public function setPost_id($postId)
 	{
+		//on convertit en nombre entier.
+		$postId = (int)$postId;
 		// on vérifie que c'est bien une chaine de caractères. 
 		if ($postId > 0)
 		{
@@ -84,11 +82,18 @@ class Comment{
 	
 	public function setComment_datefr($commentDate)
 	{
-		$this->_comment_datefr = $commentDate;
+		if (is_string($commentDate))
+		{
+			$this->_comment_datefr = $commentDate;
+		}
 	}
 	
 	public function setAlert($alert)
 	{
-		$this->_alert = $alert;
+		$alert = (int)$alert;
+		if ($alert > 0)
+		{
+			$this->_alert = $alert;
+		}
 	}
 }

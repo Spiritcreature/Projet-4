@@ -17,7 +17,7 @@ $title = "Commentaire signalé(s)";
 			foreach($alerts as $alert){ ?>
 			<tr>
 				<td>
-					<a href="index.php?action=removeComment&amp;id=<?= $alert->id() ?>" class="delete">Supprimer</a>
+					<a href="index.php?action=removeComment&amp;id=<?= $alert->id() ?>" class="delete" onclick="return confirm('Etes vous sur de vouloir supprimer ?')">Supprimer</a>
 				</td>
 				<td class="text">
 					<?= $alert->comment() ?>

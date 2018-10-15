@@ -10,12 +10,6 @@ class Post{
 	
 	public function __construct($datas)
 	{
-		/*
-		$this->setId($id);
-		$this->setTitle($title);
-		$this->setContent($content);
-		$this->setCreation_date($creation_date);
-		*/
 		$this->hydrate($datas);
 	}
 	
@@ -45,6 +39,7 @@ class Post{
 	// liste des setters
 	public function setId($id)
 	{
+		$id = (int)$id;
 		// On vérifie si ce nombre est bien strictement positif.
 		if ($id > 0)
 		{
@@ -72,6 +67,9 @@ class Post{
 	
 	public function setCreation_datefr($creation_date)
 	{
-		$this->_creation_datefr = $creation_date;
+		if (is_string($creation_date))
+		{
+			$this->_creation_datefr = $creation_date;
+		}
 	}
 }

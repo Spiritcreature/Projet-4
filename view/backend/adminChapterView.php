@@ -17,7 +17,7 @@ $title = "Commentaire signalé(s)";
 			foreach($chapters as $chapter){ ?>
 			<tr>
 				<td>
-					<a href="index.php?action=removeChapter&amp;id=<?= $chapter->id() ?>" class="delete">Supprimer</a>
+					<a href="index.php?action=removeChapter&amp;id=<?= $chapter->id() ?>" class="delete" onclick="return confirm('Etes vous sur de vouloir supprimer ?')">Supprimer</a>
 				</td>
 				<td>
 					<?= $chapter->title() ?>
