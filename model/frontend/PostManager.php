@@ -1,6 +1,6 @@
 <?php
 
-require_once('model/frontend/Database.php');
+require_once('model/Database.php');
 require_once('model/frontend/Post.php');
 
 class PostManager extends Database

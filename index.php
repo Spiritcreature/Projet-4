@@ -17,7 +17,14 @@ if (isset($_GET['action']) && !empty($_GET['action']))
 				listAllPosts();
 				break;
 			case ($_GET['action'] == 'addComment'):
-				addComment($_GET['id'], $_POST['author'], $_POST['comment']);
+				if (empty($_GET['id'] && $_POST['author'] && $_POST['comment']))
+				{
+					addmessage('danger' , 'Tous les champs ne sont pas remplis.');
+					header ( 'Location: index.php?action=post&id=' . $_GET['id']);
+				}else
+				{
+					addComment($_GET['id'], $_POST['author'], $_POST['comment']);
+				}
 				break;
 			case ($_GET['action'] == 'login'):
 				require ('view/frontend/authView.php');
@@ -27,13 +34,27 @@ if (isset($_GET['action']) && !empty($_GET['action']))
 				require ('view/frontend/authView.php');
 				break;
 			case ($_GET['action'] == 'auth'):
-				login($_POST['login'], $_POST['password']);
+				if (empty($_POST['login'] && $_POST['password']))
+				{
+					addmessage('danger' , 'Tous les champs ne sont pas remplis.');
+					header ( 'Location: index.php?action=login');
+				}else
+				{
+					login($_POST['login'], $_POST['password']);
+				}
 				break;
 			case ($_GET['action'] == 'write'):
 				require ('view/backend/writePostView.php');
 				break;
 			case ($_GET['action'] == 'newPost'):
-				writePost($_POST['title'], $_POST['content']);
+				if (empty($_POST['title'] && $_POST['title']))
+				{
+					addmessage('danger' , 'Tous les champs ne sont pas remplis.');
+					header ( 'Location: index.php?action=write');
+				}else
+				{
+				writePost($_POST['title'], $_POST['title']);
+				}
 				break;
 			case ($_GET['action'] == 'removeComment'):
 				removeComment($_GET['id']);
@@ -57,7 +78,14 @@ if (isset($_GET['action']) && !empty($_GET['action']))
 				modifyView();
 				break;
 			case ($_GET['action'] == 'modifyPost'):
+				if (empty($_POST['title'] && $_POST['content']))
+				{
+					addmessage('danger' , 'Attention vous avez dû effacer le titre ou son histoire.');
+					header ( 'Location: index.php?action=modifyView&id=' . $_GET['id']);
+				}else
+				{
 				modifyPost($_GET['id'],$_POST['title'], $_POST['content']);
+				}
 				break;
 			case ($_GET['action'] == 'administration'):
 				require('view/backend/adminView.php');
@@ -66,7 +94,14 @@ if (isset($_GET['action']) && !empty($_GET['action']))
 				require('view/backend/updateUserView.php');
 				break;
 			case ($_GET['action'] == 'updateUser'):
+				if (empty($_POST['login'] && $_POST['new_password'] && $_POST['conf_password']))
+				{
+					addmessage('danger' , 'Tous les champs ne sont pas remplis</div>');
+					header ( 'Location: index.php?action=modifyView&id=' . $_GET['id']);
+				}else
+				{
 				updateUser($_GET['id'], $_POST['login'], $_POST['new_password'], $_POST['conf_password']);
+				}
 				break;
 			default:
 				header('HTTP/1.0 404 Not Found');

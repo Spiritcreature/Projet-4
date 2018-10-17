@@ -28,7 +28,6 @@ function post() {
 
 	$post = $postManager->getPost( $_GET[ 'id' ] );
 	$comments = $commentManager->getComments( $_GET[ 'id' ] );
-	$popup = '<div id="popup">Votre modification a bien été prise en compte.</div>';
 
 	require( 'view/frontend/postView.php' );
 }

@@ -1,6 +1,6 @@
 <?php
 
-require_once('model/frontend/Database.php');
+require_once('model/Database.php');
 require_once('model/backend/User.php');
 require_once('model/frontend/Post.php');
 require_once('model/frontend/Comment.php');
