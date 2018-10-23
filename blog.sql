@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  sam. 13 oct. 2018 à 15:24
+-- Généré le :  mar. 23 oct. 2018 à 12:50
 -- Version du serveur :  5.7.21
 -- Version de PHP :  5.6.35
 
@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `comments` (
   `comment_date` datetime NOT NULL,
   `alert` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`ID`)
-) ENGINE=MyISAM AUTO_INCREMENT=74 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=78 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `comments`
@@ -49,8 +49,9 @@ INSERT INTO `comments` (`ID`, `post_id`, `author`, `comment`, `comment_date`, `a
 (55, 3, 'Anicée', 'opiùdhjfgzo^&amp;lt;hbvksbhv:rez bq84b57e5dwf7vb68sd4grsz6e81vbs3df4b6qe435fds1v231sfd6v1sfwvrf54bs6d8fb435', '2018-09-19 17:15:27', 0),
 (42, 1, 'Jean', 'Très bien écrit, j\'adore. ', '2018-09-11 13:46:07', 0),
 (56, 17, 'test', 'test', '2018-09-19 17:29:48', 0),
+(75, 4, 'Marc', 'Nul', '2018-10-15 17:16:24', 1),
 (69, 17, 'Aurélie', 'J\'ai trouvé ce chapitre assez cours,j\'attends la suite avec impatiente. Faite vite Jean allez hop hop hop !', '2018-09-26 15:11:39', 0),
-(73, 4, 'mot', 'knfvv thdhnc tyghjkbb&amp;nbsp;', '2018-10-13 15:05:48', 0),
+(76, 4, 'Alex', 'Pas mal, j\'aime bcp !', '2018-10-17 18:01:37', 0),
 (67, 40, 'Alex', 'Yes!', '2018-09-22 12:25:40', 0),
 (68, 40, 'Ludovic', '', '2018-09-22 16:50:50', 0);
 
@@ -67,7 +68,7 @@ CREATE TABLE IF NOT EXISTS `posts` (
   `content` text NOT NULL,
   `creation_date` datetime NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=MyISAM AUTO_INCREMENT=43 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=45 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `posts`
